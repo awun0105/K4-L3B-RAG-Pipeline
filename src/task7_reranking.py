@@ -16,16 +16,21 @@ def rerank_rrf(
     k: int = 60,
 ) -> list[dict]:
     """Fuse nhiều ranked lists và trả hybrid SearchResult."""
-    if top_k <= 0:
+    if not ranked_lists or top_k <= 0:
         return []
 
+    effective_k = max(1, k)
     scores: dict[str, float] = {}
     items: dict[str, dict] = {}
 
     for ranked_list in ranked_lists:
+        if not ranked_list:
+            continue
         for rank, item in enumerate(ranked_list, 1):
+            if not isinstance(item, dict) or "id" not in item:
+                continue
             item_id = item["id"]
-            scores[item_id] = scores.get(item_id, 0.0) + 1 / (k + rank)
+            scores[item_id] = scores.get(item_id, 0.0) + 1 / (effective_k + rank)
             # Cùng một id thì content/metadata giống nhau, chỉ khác score và
             # retrieval_method; giữ bản ghi gặp đầu tiên để kết quả ổn định.
             items.setdefault(item_id, item)

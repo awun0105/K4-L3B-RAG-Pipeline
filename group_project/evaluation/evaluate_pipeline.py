@@ -63,38 +63,40 @@ def evaluate_config(
         
         start_time = time.perf_counter()
         
-        # 1. Retrieval
-        if mode == "dense":
+        # 1 & 2. Retrieval & Generation
+        if mode == "hybrid":
+            from src.task10_generation import generate_with_citation
+            gen_res = generate_with_citation(q, top_k=top_k)
+            generated_answer = gen_res["answer"]
+            gen_sources = gen_res["sources"]
+            chunks = gen_sources if gen_sources else retrieve(q, top_k=top_k, use_reranking=True)
+            retrieval_method = gen_res["retrieval_source"]
+        else:
             chunks = semantic_search(q, top_k=top_k)
             retrieval_method = "dense"
-        else:
-            chunks = retrieve(q, top_k=top_k, use_reranking=True)
-            retrieval_method = chunks[0]["retrieval_method"] if chunks else "none"
-        
-        retrieval_latency = time.perf_counter() - start_time
-        
-        # 2. Generation
-        if not chunks:
-            generated_answer = SAFE_REFUSAL
-            gen_sources = []
-        else:
-            sources = sorted(chunks, key=lambda item: (-float(item["score"]), item["id"]))
-            context = format_context(reorder_for_llm(sources))
-            user_message = f"CONTEXT:\n{context}\n\nCÂU HỎI: {q}"
-            try:
-                ans = call_llm(SYSTEM_PROMPT, user_message)
-                valid_numbers = set(range(1, len(sources) + 1))
-                numbers = _citation_numbers(ans)
-                if ans == SAFE_REFUSAL or not numbers or not numbers <= valid_numbers:
-                    generated_answer = SAFE_REFUSAL
-                    gen_sources = []
-                else:
-                    generated_answer = ans
-                    gen_sources = sources
-            except Exception:
+            if not chunks:
                 generated_answer = SAFE_REFUSAL
                 gen_sources = []
+            else:
+                sources = sorted(chunks, key=lambda item: (-float(item["score"]), item["id"]))
+                context = format_context(reorder_for_llm(sources))
+                user_message = f"CONTEXT:\n{context}\n\nCÂU HỎI: {q}"
+                try:
+                    ans = call_llm(SYSTEM_PROMPT, user_message)
+                    valid_numbers = set(range(1, len(sources) + 1))
+                    numbers = _citation_numbers(ans)
+                    if ans == SAFE_REFUSAL or not numbers or not numbers <= valid_numbers:
+                        generated_answer = SAFE_REFUSAL
+                        gen_sources = []
+                    else:
+                        from src.task10_generation import _normalize_citations
+                        generated_answer = _normalize_citations(ans)
+                        gen_sources = sources
+                except Exception:
+                    generated_answer = SAFE_REFUSAL
+                    gen_sources = []
         
+        time.sleep(2)  # Respect provider RPM limits
         total_latency = round(time.perf_counter() - start_time, 3)
         retrieved_texts = [c["content"] for c in chunks]
         

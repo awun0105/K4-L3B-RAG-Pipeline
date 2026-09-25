@@ -10,13 +10,16 @@ from .task4_chunking_indexing import embed_texts, get_collection
 
 def semantic_search(query: str, top_k: int = 10) -> list[dict]:
     """Trả về dense SearchResult theo score giảm dần."""
-    if top_k <= 0:
+    if not query.strip() or top_k <= 0:
         return []
 
     try:
-        query_vector = embed_texts([query], input_type="query")[0]
+        query_vectors = embed_texts([query], input_type="query")
     except TypeError:
-        query_vector = embed_texts([query])[0]
+        query_vectors = embed_texts([query])
+    if not query_vectors:
+        return []
+    query_vector = query_vectors[0]
     response = get_collection().query(
         query_embeddings=[query_vector],
         n_results=top_k,
@@ -33,9 +36,13 @@ def semantic_search(query: str, top_k: int = 10) -> list[dict]:
     distances = (response.get("distances") or [[]])[0]
 
     results = []
+    seen_ids = set()
     for item_id, content, metadata, distance in zip(
         ids[0], documents, metadatas, distances
     ):
+        if item_id in seen_ids:
+            continue
+        seen_ids.add(item_id)
         results.append(
             {
                 "id": item_id,

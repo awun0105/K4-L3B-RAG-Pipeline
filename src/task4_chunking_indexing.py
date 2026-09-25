@@ -203,7 +203,7 @@ def _openai_compatible_embeddings(
     return [[float(value) for value in vector] for vector in vectors]
 
 
-def embed_texts(texts: list[str], *, input_type: str = "passage") -> list[list[float]]:
+def embed_texts(texts: list[str], input_type: str = "passage") -> list[list[float]]:
     """Embed texts bằng provider trong .env; Task 4 và Task 5 dùng chung hàm này."""
     if not texts:
         return []
