@@ -15,8 +15,16 @@ import csv
 import json
 from pathlib import Path
 import re
+import sys
 from markitdown import MarkItDown
 from pdfminer.high_level import extract_text
+
+if hasattr(sys.stdout, "reconfigure"):
+    try:
+        sys.stdout.reconfigure(encoding="utf-8")
+        sys.stderr.reconfigure(encoding="utf-8")
+    except Exception:
+        pass
 
 
 LANDING_DIR = Path(__file__).parent.parent / "data" / "landing"
