@@ -81,14 +81,16 @@ def format_context(chunks: list[dict]) -> str:
 def call_llm(system_prompt: str, user_message: str) -> str:
     """Gọi OpenAI, Gemini hoặc Anthropic theo cấu hình."""
     provider = LLM_PROVIDER.strip().lower()
-    if provider == "openai":
-        key = os.getenv("OPENAI_API_KEY", "")
+    if provider in ("openai", "openrouter"):
+        key = os.getenv("OPENROUTER_API_KEY" if provider == "openrouter" else "OPENAI_API_KEY", "")
+        base_url = os.getenv("BASE_URL") if provider == "openrouter" else None
         if not key:
-            raise LLMProviderError("Missing OPENAI_API_KEY")
+            raise LLMProviderError(f"Missing {'OPENROUTER_API_KEY' if provider == 'openrouter' else 'OPENAI_API_KEY'}")
         try:
             from openai import OpenAI
-            response = OpenAI(api_key=key).chat.completions.create(
-                model=LLM_MODEL or "gpt-4o-mini",
+            client = OpenAI(api_key=key, base_url=base_url)
+            response = client.chat.completions.create(
+                model=LLM_MODEL or ("qwen/qwen3.8-27b:free" if provider == "openrouter" else "gpt-4o-mini"),
                 temperature=TEMPERATURE,
                 top_p=TOP_P,
                 messages=[
@@ -100,7 +102,7 @@ def call_llm(system_prompt: str, user_message: str) -> str:
         except LLMProviderError:
             raise
         except Exception as error:
-            raise LLMProviderError(f"OpenAI request failed: {error}") from error
+            raise LLMProviderError(f"{provider} request failed: {error}") from error
     if provider == "gemini":
         key = os.getenv("GEMINI_API_KEY", "")
         if not key:

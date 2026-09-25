@@ -1,17 +1,82 @@
 [
-  {"question":"Đại học Alpha có những phương thức xét tuyển nào?","expected_answer":"MOCK ONLY — Alpha xét điểm thi tốt nghiệp THPT, học bạ và tuyển thẳng.","expected_context":"MOCK ONLY — admission_alpha_methods_2026"},
-  {"question":"Alpha xét tuyển học bạ không?","expected_answer":"MOCK ONLY — có xét học bạ.","expected_context":"MOCK ONLY — admission_alpha_methods_2026"},
-  {"question":"Phương thức tuyển sinh của Beta là gì?","expected_answer":"MOCK ONLY — điểm thi THPT và học bạ.","expected_context":"MOCK ONLY — admission_beta_methods_2026"},
-  {"question":"Beta có tuyển thẳng không?","expected_answer":"MOCK ONLY — nguồn chỉ nêu hai phương thức.","expected_context":"MOCK ONLY — admission_beta_methods_2026"},
-  {"question":"Học phí Alpha bao nhiêu?","expected_answer":"MOCK ONLY — 25 đến 35 triệu đồng mỗi năm.","expected_context":"MOCK ONLY — admission_alpha_tuition_2026"},
-  {"question":"Học phí Beta bao nhiêu?","expected_answer":"MOCK ONLY — 22 đến 30 triệu đồng mỗi năm.","expected_context":"MOCK ONLY — admission_beta_tuition_2026"},
-  {"question":"Học phí Gamma bao nhiêu?","expected_answer":"MOCK ONLY — 28 triệu đồng mỗi năm.","expected_context":"MOCK ONLY — admission_gamma_tuition_2026"},
-  {"question":"So sánh học phí Alpha và Beta.","expected_answer":"MOCK ONLY — Alpha 25–35; Beta 22–30 triệu đồng.","expected_context":"MOCK ONLY — alpha and beta tuition"},
-  {"question":"Điểm chuẩn CNTT Alpha năm 2025?","expected_answer":"MOCK ONLY — 26,5 điểm.","expected_context":"MOCK ONLY — admission_alpha_cutoff_2025"},
-  {"question":"Điểm chuẩn CNTT Beta năm 2025?","expected_answer":"MOCK ONLY — 24,0 điểm.","expected_context":"MOCK ONLY — admission_beta_cutoff_2025"},
-  {"question":"So sánh điểm chuẩn CNTT Alpha và Beta.","expected_answer":"MOCK ONLY — Alpha 26,5; Beta 24,0.","expected_context":"MOCK ONLY — alpha and beta cutoffs"},
-  {"question":"Chỉ tiêu Alpha năm 2026?","expected_answer":"MOCK ONLY — 5.000 sinh viên.","expected_context":"MOCK ONLY — admission_alpha_quota_2026"},
-  {"question":"Chỉ tiêu Beta năm 2026?","expected_answer":"MOCK ONLY — 3.200 sinh viên.","expected_context":"MOCK ONLY — admission_beta_quota_2026"},
-  {"question":"Alpha có những ngành nào?","expected_answer":"MOCK ONLY — CNTT, Quản trị kinh doanh, Ngôn ngữ Anh.","expected_context":"MOCK ONLY — admission_alpha_programs_2026"},
-  {"question":"Alpha có ngành Y khoa không?","expected_answer":"MOCK ONLY — chưa đủ evidence.","expected_context":"MOCK ONLY — no evidence"}
+  {
+    "question": "Thang điểm đánh giá kết quả rèn luyện của sinh viên Trường ĐH Khoa học Tự nhiên là bao nhiêu?",
+    "expected_answer": "Điểm rèn luyện của sinh viên được đánh giá theo thang điểm 100 theo từng học kỳ.",
+    "expected_context": "qd-1028-2739-qc-drl-2020_2023.md - Điều 3: Điểm rèn luyện được đánh giá theo thang điểm 100."
+  },
+  {
+    "question": "Kết quả rèn luyện của sinh viên được phân loại thành những mức nào?",
+    "expected_answer": "Kết quả rèn luyện được phân thành 6 loại: Xuất sắc (90 - 100 điểm), Tốt (80 - 89 điểm), Khá (65 - 79 điểm), Trung bình (50 - 64 điểm), Yếu (35 - 49 điểm) và Kém (dưới 35 điểm).",
+    "expected_context": "qd-1028-2739-qc-drl-2020_2023.md - Điều 11: Phân loại kết quả rèn luyện từ xuất sắc đến kém."
+  },
+  {
+    "question": "Ý thức tham gia học tập trong quy chế điểm rèn luyện chiếm tối đa bao nhiêu điểm?",
+    "expected_answer": "Đánh giá về ý thức tham gia học tập có khung điểm từ 0 đến 20 điểm.",
+    "expected_context": "qd-1028-2739-qc-drl-2020_2023.md - Điều 4: Đánh giá về ý thức tham gia học tập (từ 0 – 20 điểm)."
+  },
+  {
+    "question": "Ý thức chấp hành nội quy, quy chế trong nhà trường được tính tối đa bao nhiêu điểm rèn luyện?",
+    "expected_answer": "Đánh giá về ý thức chấp hành nội quy, quy chế, quy định trong Nhà Trường có khung điểm từ 0 đến 25 điểm.",
+    "expected_context": "qd-1028-2739-qc-drl-2020_2023.md - Điều 5: Đánh giá về ý thức chấp hành nội quy, quy chế trong Nhà Trường: từ 0 – 25 điểm."
+  },
+  {
+    "question": "Điều kiện để sinh viên được xét và công nhận tốt nghiệp đại học tại HCMUS là gì?",
+    "expected_answer": "Sinh viên được xét và công nhận tốt nghiệp khi: không bị kỷ luật đình chỉ hay truy cứu trách nhiệm hình sự; tích lũy đủ học phần và tín chỉ theo CTĐT; hoàn tất chứng chỉ Giáo dục quốc phòng - An ninh và Giáo dục thể chất; đạt chuẩn ngoại ngữ và tin học của Trường; nộp hồ sơ xét tốt nghiệp đúng hạn.",
+    "expected_context": "qd-1175_quy-che-dao-tao-trinh-do-dh-2021.md - Điều 17: Sinh viên được xét và công nhận tốt nghiệp khi có đủ các điều kiện tích lũy tín chỉ, GDQP, GDTC, ngoại ngữ, tin học."
+  },
+  {
+    "question": "Bằng tốt nghiệp đại học được cấp trong thời hạn bao lâu sau khi sinh viên đủ điều kiện?",
+    "expected_answer": "Sinh viên được cấp bằng tốt nghiệp trong thời hạn 03 tháng tính từ thời điểm đáp ứng đầy đủ điều kiện tốt nghiệp và hoàn thành các nghĩa vụ với nhà Trường.",
+    "expected_context": "qd-1175_quy-che-dao-tao-trinh-do-dh-2021.md - Điều 18: cấp bằng tốt nghiệp trong thời hạn 03 tháng tính từ thời điểm sinh viên đáp ứng đầy đủ điều kiện tốt nghiệp."
+  },
+  {
+    "question": "Hạng tốt nghiệp loại xuất sắc và giỏi có bị hạ bậc không nếu sinh viên bị kỷ luật?",
+    "expected_answer": "Hạng tốt nghiệp của sinh viên có điểm trung bình tích lũy loại xuất sắc và giỏi sẽ bị giảm đi một mức nếu đã bị kỷ luật từ mức cảnh cáo trở lên trong thời gian học.",
+    "expected_context": "qd-1175_quy-che-dao-tao-trinh-do-dh-2021.md - Điều 18: Hạng tốt nghiệp xuất sắc và giỏi sẽ bị giảm một mức nếu bị kỷ luật từ cảnh cáo trở lên."
+  },
+  {
+    "question": "Những đối tượng sinh viên nào được miễn 100% học phí?",
+    "expected_answer": "Sinh viên được miễn 100% học phí bao gồm: Người có công với cách mạng; Sinh viên khuyết tật; Sinh viên 16-22 tuổi học văn bằng thứ nhất hưởng trợ cấp xã hội hàng tháng; Sinh viên là người dân tộc thiểu số thuộc hộ nghèo/cận nghèo; Sinh viên dân tộc thiểu số rất ít người ở vùng khó khăn.",
+    "expected_context": "quydinh-hbkk-qd575-2024.md - Mục I: Đối tượng được miễn 100% học phí theo Nghị định 81/2021/NĐ-CP."
+  },
+  {
+    "question": "Sinh viên dân tộc thiểu số ở vùng đặc biệt khó khăn được giảm bao nhiêu phần trăm học phí?",
+    "expected_answer": "Sinh viên là người dân tộc thiểu số ở thôn/bản đặc biệt khó khăn, xã khu vực III vùng dân tộc và miền núi, xã đặc biệt khó khăn bãi ngang ven biển hải đảo được giảm 70% học phí.",
+    "expected_context": "quydinh-hbkk-qd575-2024.md - Mục II: Đối tượng được giảm 70% học phí."
+  },
+  {
+    "question": "Đối tượng sinh viên nào được giảm 50% học phí tại trường?",
+    "expected_answer": "Sinh viên là con cán bộ, công chức, viên chức, công nhân mà cha hoặc mẹ bị tai nạn lao động hoặc mắc bệnh nghề nghiệp được hưởng trợ cấp thường xuyên.",
+    "expected_context": "quydinh-hbkk-qd575-2024.md - Mục III: Đối tượng được giảm 50% học phí."
+  },
+  {
+    "question": "Mức trợ cấp xã hội cho sinh viên mồ côi cả cha lẫn mẹ không nơi nương tựa là bao nhiêu?",
+    "expected_answer": "Sinh viên mồ côi cả cha lẫn mẹ không nơi nương tựa được nhận mức trợ cấp xã hội là 100.000 đồng/tháng.",
+    "expected_context": "quydinh-hbkk-qd575-2024.md - Thông tin trợ cấp xã hội: Đối tượng được trợ cấp 100.000đ/tháng gồm sinh viên mồ côi cả cha lẫn mẹ."
+  },
+  {
+    "question": "Những sinh viên nào được ưu tiên nội trú tại Ký túc xá ĐHQG-HCM?",
+    "expected_answer": "Sinh viên có hộ khẩu thường trú tại các tỉnh/thành phố ngoài TP.HCM và các huyện ngoại thành TP.HCM đều được ưu tiên bố trí nội trú tại Ký túc xá ĐHQG-HCM.",
+    "expected_context": "quyet-dinh-ve-viec-ban-hanh-quy-dinh-ve-noi-tru-tai-ky-tuc-xa-truong.md - Chủ trương sinh viên có hộ khẩu ngoài TP.HCM và huyện ngoại thành đều được nội trú tại KTX ĐHQG-HCM."
+  },
+  {
+    "question": "Sinh viên bị xử lý buộc thôi học trong những trường hợp nào theo quy chế đào tạo?",
+    "expected_answer": "Sinh viên bị buộc thôi học khi bị cảnh báo học tập vượt quá số lần quy định hoặc thời gian học tập vượt quá giới hạn tối đa cho phép theo quy chế đào tạo tín chỉ.",
+    "expected_context": "qd-1175_quy-che-dao-tao-trinh-do-dh-2021.md - Điều 16: Xử lý kết quả học tập theo tín chỉ, buộc thôi học khi quá số lần cảnh báo hoặc quá thời gian tối đa."
+  },
+  {
+    "question": "Điểm học phần Giáo dục quốc phòng và Giáo dục thể chất có tính vào điểm trung bình tích lũy tốt nghiệp không?",
+    "expected_answer": "Không tính vào điểm trung bình tích lũy, các học phần Giáo dục quốc phòng - An ninh và Giáo dục thể chất chỉ cấp chứng chỉ và là điều kiện cần để được xét tốt nghiệp.",
+    "expected_context": "qd-1175_quy-che-dao-tao-trinh-do-dh-2021.md - Điều 11 & Điều 17: GDQP và GDTC cấp chứng chỉ, không tính vào điểm trung bình tích lũy."
+  },
+  {
+    "question": "Trường Đại học Khoa học Tự nhiên có đào tạo chuyên ngành Bác sĩ Răng Hàm Mặt không?",
+    "expected_answer": "Thông tin trong nguồn hiện có chưa đủ để xác minh câu hỏi này.",
+    "expected_context": "Hỏi ngoài phạm vi (out-of-domain). HCMUS không có chương trình đào tạo Bác sĩ Răng Hàm Mặt trong tài liệu."
+  },
+  {
+    "question": "Dự báo thời tiết tại Thành phố Hồ Chí Minh ngày mai mưa hay nắng?",
+    "expected_answer": "Thông tin trong nguồn hiện có chưa đủ để xác minh câu hỏi này.",
+    "expected_context": "Hỏi ngoài phạm vi (out-of-domain). Tài liệu học vụ của Trường không chứa thông tin dự báo thời tiết."
+  }
 ]
