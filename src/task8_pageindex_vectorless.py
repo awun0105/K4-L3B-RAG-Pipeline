@@ -18,8 +18,14 @@ from contextlib import contextmanager
 from pathlib import Path
 
 from dotenv import load_dotenv
-from pageindex import PageIndexAPIError, PageIndexClient
-from pageindex import client as pageindex_client
+
+try:
+    from pageindex import PageIndexAPIError, PageIndexClient
+    from pageindex import client as pageindex_client
+except ImportError:  # PageIndex is an optional fallback, never an import blocker.
+    PageIndexAPIError = RuntimeError
+    PageIndexClient = None
+    pageindex_client = None
 
 from .task4_chunking_indexing import load_documents
 
@@ -70,6 +76,8 @@ def _require_api_key() -> str:
             "Thiếu PAGEINDEX_API_KEY trong .env; PageIndex chỉ là fallback nên "
             "pipeline vẫn chạy bình thường khi không có key."
         )
+    if PageIndexClient is None:
+        raise RuntimeError("Chưa cài package pageindex; fallback này đang không khả dụng.")
     return PAGEINDEX_API_KEY
 
 
@@ -107,6 +115,9 @@ class _TimeoutRequests:
 @contextmanager
 def _request_timeout(seconds: float = HTTP_TIMEOUT):
     """Buộc các request PageIndex có timeout, rồi trả lại module gốc."""
+    if pageindex_client is None:
+        yield
+        return
     original = pageindex_client.requests
     pageindex_client.requests = _TimeoutRequests(original, seconds)
     try:
@@ -301,7 +312,7 @@ def pageindex_search(query: str, top_k: int = 5) -> list[dict]:
     Không có key, chưa upload tài liệu, hoặc tài liệu lỗi thì trả list rỗng để
     Task 9 giữ kết quả hybrid thay vì crash.
     """
-    if top_k <= 0 or not PAGEINDEX_API_KEY:
+    if top_k <= 0 or not PAGEINDEX_API_KEY or PageIndexClient is None:
         return []
 
     entries = _cached_entries()
