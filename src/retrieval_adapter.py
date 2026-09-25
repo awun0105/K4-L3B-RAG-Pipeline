@@ -74,7 +74,9 @@ def mock_retrieve(query: str, top_k: int = 5) -> list[dict]:
 
 def get_retriever() -> Callable[[str, int], list[dict]]:
     """Return mock, real, or automatic retrieval without leaking it into UI."""
-    mode = os.getenv("RAG_RETRIEVAL_MODE", "auto").strip().lower()
+    # Production/default path uses the indexed HCMUS corpus. Mock data is only
+    # selected explicitly for UI development.
+    mode = os.getenv("RAG_RETRIEVAL_MODE", "real").strip().lower()
     if mode == "mock":
         return mock_retrieve
     if mode == "real":

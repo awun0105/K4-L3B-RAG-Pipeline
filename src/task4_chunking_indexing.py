@@ -41,6 +41,11 @@ CHUNKING_METHOD = "recursive"
 EMBEDDING_PROVIDER = os.getenv("EMBEDDING_PROVIDER", "sentence_transformers").strip().lower()
 EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "BAAI/bge-m3").strip()
 EMBED_BATCH_SIZE = 32
+# Gemini counts each ``embed_content`` call against a request quota.  Keep this
+# configurable so a limited/free project can index the corpus without changing
+# source code; retries below respect the delay returned by the provider.
+GEMINI_EMBED_BATCH_SIZE = int(os.getenv("GEMINI_EMBED_BATCH_SIZE", "50"))
+GEMINI_MAX_RETRIES = int(os.getenv("GEMINI_MAX_RETRIES", "6"))
 # Dimension của model local mặc định (BAAI/bge-m3); cập nhật nếu đổi EMBEDDING_MODEL.
 EMBEDDING_DIM = 1024
 
@@ -201,9 +206,30 @@ def embed_texts(texts: list[str]) -> list[list[float]]:
 
         client = genai.Client(api_key=_api_key("GEMINI_API_KEY"))
         vectors: list[list[float]] = []
-        for start in range(0, len(texts), 50):
-            batch = texts[start : start + 50]
-            response = client.models.embed_content(model=model_name, contents=batch)
+        for start in range(0, len(texts), GEMINI_EMBED_BATCH_SIZE):
+            batch = texts[start : start + GEMINI_EMBED_BATCH_SIZE]
+            for attempt in range(GEMINI_MAX_RETRIES):
+                try:
+                    response = client.models.embed_content(
+                        model=model_name, contents=batch
+                    )
+                    break
+                except Exception as exc:
+                    if attempt == GEMINI_MAX_RETRIES - 1:
+                        raise RuntimeError(
+                            "Gemini embedding không hoàn tất sau nhiều lần thử. "
+                            "Kiểm tra quota/billing hoặc chạy lại sau ít phút."
+                        ) from exc
+                    # Gemini includes a retry delay in 429 responses but does
+                    # not expose it consistently across SDK releases. Exponential
+                    # backoff is predictable and prevents a tight retry loop.
+                    wait_time = min(60, 10 * (attempt + 1))
+                    print(
+                        f"Gemini đang giới hạn embedding; thử lại batch "
+                        f"{start + 1}-{start + len(batch)}/{len(texts)} sau "
+                        f"{wait_time}s..."
+                    )
+                    time.sleep(wait_time)
             vectors.extend(
                 [float(val) for val in embedding.values]
                 for embedding in response.embeddings

@@ -11,6 +11,7 @@ except ImportError:
 
 from src.task10_generation import generate_with_citation
 from ui.components import render_empty_state, render_header, render_message, render_sidebar
+from ui.data_views import render_corpus_view, render_retrieval_view
 from ui.styles import APP_CSS, DARK_OVERRIDE
 
 
@@ -45,14 +46,23 @@ st.markdown(
 top_k = render_sidebar()
 render_header()
 
-if not st.session_state.messages:
-    suggestion = render_empty_state()
-    if suggestion:
-        handle_query(suggestion, top_k)
+chat_tab, corpus_tab, retrieval_tab = st.tabs(
+    ["💬 Hỏi đáp", "📚 Kho tài liệu", "🔎 Retrieval workspace"]
+)
 
-for message in st.session_state.messages:
-    render_message(message, top_k)
+with chat_tab:
+    if not st.session_state.messages:
+        suggestion = render_empty_state()
+        if suggestion:
+            handle_query(suggestion, top_k)
+    for message in st.session_state.messages:
+        render_message(message, top_k)
+    query = st.chat_input("Hỏi về học phí, học bổng, ký túc xá, tốt nghiệp…")
+    if query:
+        handle_query(query, top_k)
 
-query = st.chat_input("Hỏi về điểm chuẩn, học phí, phương thức xét tuyển…")
-if query:
-    handle_query(query, top_k)
+with corpus_tab:
+    render_corpus_view()
+
+with retrieval_tab:
+    render_retrieval_view()
