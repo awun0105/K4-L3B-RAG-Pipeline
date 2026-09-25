@@ -1,60 +1,60 @@
-# RAG evaluation results
+# RAG Evaluation Result
 
-## Run information
+## 1. Experiment Setup
 
-| Field                              | Value |
-| ---------------------------------- | ----- |
-| Evaluation date                    | TODO  |
-| Framework and version              | TODO  |
-| Evaluator model                    | TODO  |
-| Generator model                    | TODO  |
-| Embedding model                    | TODO  |
-| Corpus version/commit              | TODO  |
-| Golden dataset size                | TODO  |
-| `top_k`                            | TODO  |
-| Fallback threshold and calibration | TODO  |
+**STATUS: MOCK DRY RUN.** The real university-admission corpus, indexing and retrieval modules have not yet been merged. The Alpha/Beta/Gamma data and `golden_dataset_mock.json` are development-only, not official university information or official metrics.
 
-## Configurations
+| Field | Value |
+| --- | --- |
+| Topic | Tuyển sinh đại học Việt Nam |
+| Corpus version | Development mock corpus only |
+| Date | 2026-09-25 |
+| Golden cases | 16 mock dry-run cases |
+| LLM provider/model | Configured through environment; offline mock fallback during development |
+| Top-K | 5 |
+| Threshold | Pending calibration on merged corpus |
+| Config A | Dense-only |
+| Config B | Hybrid + RRF |
 
-- **Config A — dense-only:** TODO
-- **Config B — hybrid + RRF:** TODO
+## 2. Overall Scores
 
-Hai config phải dùng cùng golden dataset, generator, evaluator, prompt và `top_k`; chỉ thay retrieval strategy.
+No official faithfulness, answer relevance, context recall, or context precision score is reported. Run the agreed evaluator against real grounded data before publishing metrics.
 
-## Overall scores
+| Metric | Dense-only | Hybrid + RRF | Delta B-A |
+| --- | --- | --- | --- |
+| Faithfulness | Not measured | Not measured | Not measured |
+| Answer relevance | Not measured | Not measured | Not measured |
+| Context recall | Not measured | Not measured | Not measured |
+| Context precision | Not measured | Not measured | Not measured |
 
-| Metric            | Config A | Config B | Delta B−A |
-| ----------------- | -------: | -------: | --------: |
-| Faithfulness      |     TODO |     TODO |      TODO |
-| Answer relevance  |     TODO |     TODO |      TODO |
-| Context recall    |     TODO |     TODO |      TODO |
-| Context precision |     TODO |     TODO |      TODO |
-| **Average**       |     TODO |     TODO |      TODO |
+## 3. Latency
 
-## A/B comparison
+The dry-run runner records per-question latency. Compare latency only after both configurations use the same real corpus and model.
 
-- Cấu hình tốt hơn: TODO
-- Evidence: TODO
-- Trade-off về latency/cost: TODO
+## 4. A/B Comparison
 
-## Worst performers
+Run the same corpus, prompt, evaluator, LLM and `top_k` for dense-only and hybrid + RRF. Only retrieval changes. Save outputs as `results_dense.json` and `results_hybrid.json`; no conclusion is made from mock data.
 
-|   # | Question | Config | Faithfulness | Relevance | Recall | Precision | Failure stage             | Root cause |
-| --: | -------- | ------ | -----------: | --------: | -----: | --------: | ------------------------- | ---------- |
-|   1 | TODO     | TODO   |         TODO |      TODO |   TODO |      TODO | retrieval/generation/data | TODO       |
-|   2 | TODO     | TODO   |         TODO |      TODO |   TODO |      TODO | retrieval/generation/data | TODO       |
-|   3 | TODO     | TODO   |         TODO |      TODO |   TODO |      TODO | retrieval/generation/data | TODO       |
+## 5. Worst Performers
 
-## Recommendations
+| Question | Config | Observed behavior | Failure stage | Root cause | Verification method |
+| --- | --- | --- | --- | --- | --- |
+| Alpha có ngành Y khoa không? | Mock | Safe refusal expected | data | No evidence in mock corpus | Confirm no citation/source is rendered |
+| So sánh học phí Alpha và Beta | Mock | Requires two tuition sources | retrieval | Multi-source ranking needs real validation | Inspect both cited source IDs |
+| Thời tiết Hà Nội hôm nay thế nào? | Mock | Safe refusal expected | retrieval | Out-of-domain query | Confirm `sources=[]` and `retrieval_source=none` |
 
-| Priority | Action | Evidence from failure analysis | Expected impact | How to verify |
-| -------: | ------ | ------------------------------ | --------------- | ------------- |
-|        1 | TODO   | TODO                           | TODO            | TODO          |
-|        2 | TODO   | TODO                           | TODO            | TODO          |
-|        3 | TODO   | TODO                           | TODO            | TODO          |
+## 6. Recommendations
 
-## Bonus experiments
+1. Merge verified admission documents and source URLs before declaring answers or metrics production-ready.
+2. Complete real dense/BM25/RRF modules, then set `RAG_RETRIEVAL_MODE=real`.
+3. Replace mock cases with source-grounded cases and inspect the three worst cases before tuning prompts.
 
-| Experiment | Baseline | Metric delta | Latency/cost delta | Conclusion |
-| ---------- | -------- | -----------: | -----------------: | ---------- |
-| TODO       | TODO     |         TODO |               TODO | TODO       |
+## 7. Reproduction
+
+```powershell
+$env:RAG_RETRIEVAL_MODE = "mock"
+python group_project/evaluation/evaluation_runner.py
+
+$env:RAG_RETRIEVAL_MODE = "real"
+python group_project/evaluation/evaluation_runner.py --dataset group_project/evaluation/golden_dataset.json --output group_project/evaluation/results_hybrid.json
+```

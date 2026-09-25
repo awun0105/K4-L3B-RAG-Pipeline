@@ -1,0 +1,17 @@
+[
+  {"question":"Đại học Alpha có những phương thức xét tuyển nào?","expected_answer":"MOCK ONLY — Alpha xét điểm thi tốt nghiệp THPT, học bạ và tuyển thẳng.","expected_context":"MOCK ONLY — admission_alpha_methods_2026"},
+  {"question":"Alpha xét tuyển học bạ không?","expected_answer":"MOCK ONLY — có xét học bạ.","expected_context":"MOCK ONLY — admission_alpha_methods_2026"},
+  {"question":"Phương thức tuyển sinh của Beta là gì?","expected_answer":"MOCK ONLY — điểm thi THPT và học bạ.","expected_context":"MOCK ONLY — admission_beta_methods_2026"},
+  {"question":"Beta có tuyển thẳng không?","expected_answer":"MOCK ONLY — nguồn chỉ nêu hai phương thức.","expected_context":"MOCK ONLY — admission_beta_methods_2026"},
+  {"question":"Học phí Alpha bao nhiêu?","expected_answer":"MOCK ONLY — 25 đến 35 triệu đồng mỗi năm.","expected_context":"MOCK ONLY — admission_alpha_tuition_2026"},
+  {"question":"Học phí Beta bao nhiêu?","expected_answer":"MOCK ONLY — 22 đến 30 triệu đồng mỗi năm.","expected_context":"MOCK ONLY — admission_beta_tuition_2026"},
+  {"question":"Học phí Gamma bao nhiêu?","expected_answer":"MOCK ONLY — 28 triệu đồng mỗi năm.","expected_context":"MOCK ONLY — admission_gamma_tuition_2026"},
+  {"question":"So sánh học phí Alpha và Beta.","expected_answer":"MOCK ONLY — Alpha 25–35; Beta 22–30 triệu đồng.","expected_context":"MOCK ONLY — alpha and beta tuition"},
+  {"question":"Điểm chuẩn CNTT Alpha năm 2025?","expected_answer":"MOCK ONLY — 26,5 điểm.","expected_context":"MOCK ONLY — admission_alpha_cutoff_2025"},
+  {"question":"Điểm chuẩn CNTT Beta năm 2025?","expected_answer":"MOCK ONLY — 24,0 điểm.","expected_context":"MOCK ONLY — admission_beta_cutoff_2025"},
+  {"question":"So sánh điểm chuẩn CNTT Alpha và Beta.","expected_answer":"MOCK ONLY — Alpha 26,5; Beta 24,0.","expected_context":"MOCK ONLY — alpha and beta cutoffs"},
+  {"question":"Chỉ tiêu Alpha năm 2026?","expected_answer":"MOCK ONLY — 5.000 sinh viên.","expected_context":"MOCK ONLY — admission_alpha_quota_2026"},
+  {"question":"Chỉ tiêu Beta năm 2026?","expected_answer":"MOCK ONLY — 3.200 sinh viên.","expected_context":"MOCK ONLY — admission_beta_quota_2026"},
+  {"question":"Alpha có những ngành nào?","expected_answer":"MOCK ONLY — CNTT, Quản trị kinh doanh, Ngôn ngữ Anh.","expected_context":"MOCK ONLY — admission_alpha_programs_2026"},
+  {"question":"Alpha có ngành Y khoa không?","expected_answer":"MOCK ONLY — chưa đủ evidence.","expected_context":"MOCK ONLY — no evidence"}
+]

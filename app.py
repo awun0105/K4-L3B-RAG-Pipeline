@@ -1,45 +1,58 @@
+"""UniGuide AI UI orchestration. RAG backend contracts remain unchanged."""
+from __future__ import annotations
+
 import streamlit as st
-from dotenv import load_dotenv
+
+try:
+    from dotenv import load_dotenv
+except ImportError:
+    def load_dotenv() -> bool:
+        return False
+
+from src.task10_generation import generate_with_citation
+from ui.components import render_empty_state, render_header, render_message, render_sidebar
+from ui.styles import APP_CSS, DARK_OVERRIDE
 
 
 load_dotenv()
-
 st.set_page_config(
-    page_title="RAG Chatbot",
-    page_icon="",
+    page_title="UniGuide AI",
+    page_icon="🎓",
     layout="wide",
+    initial_sidebar_state="expanded",
 )
-
 if "messages" not in st.session_state:
     st.session_state.messages = []
+if "dark_mode" not in st.session_state:
+    st.session_state.dark_mode = False
 
-with st.sidebar:
-    st.title("RAG Chatbot")
-    st.caption("Thay mô tả theo đề tài của nhóm")
-    top_k = st.slider("Số chunks", 3, 10, 5)
 
-st.title("RAG Chatbot")
-st.caption("Thay tiêu đề và hướng dẫn sử dụng")
+def handle_query(query: str, top_k: int) -> None:
+    """Single UI entry point for both chat input and suggestion cards."""
+    if not query.strip():
+        return
+    st.session_state.messages.append({"role": "user", "content": query})
+    with st.spinner("Đang tìm nguồn phù hợp…"):
+        result = generate_with_citation(query, top_k)
+    st.session_state.messages.append({"role": "assistant", **result})
+    st.rerun()
+
+
+st.markdown(
+    APP_CSS + (DARK_OVERRIDE if st.session_state.dark_mode else ""),
+    unsafe_allow_html=True,
+)
+top_k = render_sidebar()
+render_header()
+
+if not st.session_state.messages:
+    suggestion = render_empty_state()
+    if suggestion:
+        handle_query(suggestion, top_k)
 
 for message in st.session_state.messages:
-    with st.chat_message(message["role"]):
-        st.markdown(message["content"])
-        # TODO: Hiển thị sources và retrieval score.
+    render_message(message, top_k)
 
-query = st.chat_input("Nhập câu hỏi...")
-
+query = st.chat_input("Hỏi về điểm chuẩn, học phí, phương thức xét tuyển…")
 if query:
-    st.session_state.messages.append({"role": "user", "content": query})
-
-    with st.chat_message("user"):
-        st.markdown(query)
-
-    with st.chat_message("assistant"):
-        # TODO: Gọi generate_with_citation(query, top_k).
-        answer = "TODO: Itegration RAG Pipeline hêre"
-        sources = []
-        st.markdown(answer)
-
-        # TODO: Hiển thị sources và citation.
-
-    # TODO: Lưu answer và sources vào session state.
+    handle_query(query, top_k)
