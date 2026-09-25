@@ -1,0 +1,38 @@
+# ==============================================================================
+# DANH SÁCH THÔNG TIN CHUNG DÀNH CHO TOÀN BỘ SINH VIÊN HCMUS (MỚI NHẤT 2025 - 2026)
+# Đã phân loại theo 2 nhóm:
+#   [legal] : Các văn bản quy chế, quyết định chính sách toàn trường (PDF)
+#   [news]  : Các bài viết thông báo học phí, BHYT, KTX, học bổng, tốt nghiệp (HTML)
+# ==============================================================================
+
+[legal]
+# 1. Quy chế đào tạo trình độ đại học chính quy (QĐ 1175 - Quy định cốt lõi về học vụ, tín chỉ, cảnh báo học tập)
+https://hcmus.edu.vn/wp-content/uploads/2025/04/QD-1175_Quy-che-dao-tao-trinh-do-DH-2021.pdf
+
+# 2. Quy định xét cấp học bổng khuyến khích học tập mới nhất (QĐ 575/2024 áp dụng cho năm 2025-2026)
+https://hcmus.edu.vn/wp-content/uploads/2025/06/QUYDINH-HBKK-QD575-2024.pdf
+
+# 3. Quy chế đánh giá kết quả rèn luyện sinh viên cập nhật mới nhất (QĐ 1028)
+https://hcmus.edu.vn/wp-content/uploads/2026/06/QD-1028-2739-QC-DRL-2020_2023.pdf
+
+# 4. Quy định về việc nội trú tại Ký túc xá Trường ĐH Khoa học Tự nhiên
+https://hcmus.edu.vn/wp-content/uploads/2026/03/Quyet-dinh-ve-viec-ban-hanh-Quy-dinh-ve-noi-tru-tai-ky-tuc-xa-Truong.pdf
+
+[news]
+# 1. Thông báo thu học phí năm học 2025 - 2026 (Chương trình đề án & định mức)
+https://hcmus.edu.vn/thong-bao-thu-hoc-phi-hoc-ky-2-nam-hoc-2025-2026-doi-voi-sinh-vien-trinh-do-dai-hoc-cac-chuong-trinh-theo-de-an/
+
+# 2. Thông báo thực hiện miễn giảm học phí và chế độ chính sách cho sinh viên năm học 2025 - 2026
+https://hcmus.edu.vn/thong-bao-thuc-hien-mien-giam-hoc-phi-va-che-do-chinh-sach-cho-sinh-vien-hoc-ky-2-2025-2026/
+
+# 3. Thông báo tiếp nhận sinh viên vào ở Ký túc xá ĐHQG-HCM (Thủ Đức - Dĩ An)
+https://hcmus.edu.vn/thong-bao-ve-viec-tiep-nhan-sinh-vien-vao-o-ky-tuc-xa-dai-hoc-quoc-gia-thu-duc-di-an/
+
+# 4. Thông báo phát thẻ và quyền lợi Bảo hiểm Y tế (BHYT) sinh viên
+https://hcmus.edu.vn/thong-bao-v-v-phat-the-bao-hiem-y-te-cho-sinh-vien-dot-3/
+
+# 5. Thông báo tổ chức tuần lễ Sinh hoạt công dân - Sinh viên đầu khóa năm học 2025 - 2026
+https://hcmus.edu.vn/thong-bao-to-chuc-tuan-le-sinh-hoat-cong-dan-sinh-vien-doi-voi-tan-sinh-vien-khoa-tuyen-2025/
+
+# 6. Thông báo nộp hồ sơ xét tốt nghiệp đại học hệ chính quy các đợt trong năm học 2025 - 2026
+https://hcmus.edu.vn/thong-bao-nop-ho-so-xet-tot-nghiep-dai-hoc-he-chinh-quy-cac-chuong-trinh-cho-cac-dot-cong-bo-danh-sach-tot-nghiep-thang-9-10-va-11-nam-2025/

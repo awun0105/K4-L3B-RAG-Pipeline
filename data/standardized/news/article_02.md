@@ -1,0 +1,401 @@
+---
+title: "Thông báo thực hiện miễn, giảm học phí và chế độ chính sách cho sinh viên học kỳ 2/2025-2026"
+source: "article_02.json"
+doc_type: "news"
+url: "https://hcmus.edu.vn/thong-bao-thuc-hien-mien-giam-hoc-phi-va-che-do-chinh-sach-cho-sinh-vien-hoc-ky-2-2025-2026/"
+date_crawled: "2026-09-25T11:24:38.461344"
+---
+
+# Thông báo thực hiện miễn, giảm học phí và chế độ chính sách cho sinh viên học kỳ 2/2025-2026
+
+**Nguồn bài viết:** [https://hcmus.edu.vn/thong-bao-thuc-hien-mien-giam-hoc-phi-va-che-do-chinh-sach-cho-sinh-vien-hoc-ky-2-2025-2026/](https://hcmus.edu.vn/thong-bao-thuc-hien-mien-giam-hoc-phi-va-che-do-chinh-sach-cho-sinh-vien-hoc-ky-2-2025-2026/)
+
+**Ngày cập nhật:** 2026-09-25T11:24:38.461344
+
+---
+
+Thông báo thực hiện miễn, giảm học phí và chế độ chính sách cho sinh viên học kỳ 2/2025-2026 - Trường Đại học Khoa học tự nhiên, ĐHQG-HCM
+
+27/02/202616/03/2026
+Thông tin dành cho sinh viên
+
+THÔNG BÁO
+
+V/v thực hiện miễn, giảm học phí và chế độ chính sách cho sinh viên học kỳ 2/2025-2026
+
+Trường ĐH Khoa học tự nhiên thông báo việc thực hiện miễn, giảm học phí và các chế độ chính sách đối với tất cả các sinh viên hệ chính quy học kỳ 2 năm học 2025-2026 như sau:
+
+MIỄN, GIẢM HỌC PHÍ (MGHP):
+
+Căn cứ Nghị định số 238/2025/NĐ-CP ngày 03 tháng 9 năm 2025 của Chính phủ quy định về chính sách học phí, miễn, giảm, hỗ trợ học phí, hỗ trợ chi phí học tập và giá dịch vụ trong lĩnh vực giáo dục, đào tạo.
+
+1.1 Đối tượng và hồ sơ xét miễn, giảm học phí:
+
+STT
+ĐỐI TƯỢNG
+HỔ SƠ CẦN NỘP
+
+SINH VIÊN ĐƯỢC MIỄN 100% HỌC PHÍ
+
+1
+– Sinh viên là con của người hoạt động cách mạng (CM) trước ngày 01/01/1945; con của người hoạt động CM từ ngày 01/01/1945 đến ngày khởi nghĩa tháng 8/1945;
+
+– Sinh viên là con của Anh hùng LLVTND; con của AHLĐ trong thời kỳ kháng chiến;
+
+– Sinh viên là con của liệt sỹ, con thương binh, con bệnh binh, con của người được hưởng chính sách như thương binh;
+
+– Sinh viên là con của người hoạt động kháng chiến bị nhiễm chất độc hóa học;
+
+– Sinh viên là con của Người hoạt động cách mạng, kháng chiến, bảo vệ Tổ quốc, làm nghĩa vụ quốc tế bị địch bắt tù, đày; Người hoạt động kháng chiến giải phóng dân tộc, bảo vệ Tổ quốc, làm nghĩa vụ quốc tế; Người có công giúp đỡ cách mạng.
+1. Đơn đề nghị Miễn, giảm học phí (theo mẫu);
+
+2. Bản sao trích lục giấy khai sinh;
+
+3. Giấy xác nhận của cơ quan quản lý đối với người có công (Bản sao chứng thực hoặc Bản sao kèm bản chính để đối chiếu);
+
+4. Giấy cam kết (theo mẫu)
+
+2
+Sinh viên không quá 22 tuổi đang học giáo dục đại học văn bằng thứ nhất thuộc đối tượng hưởng trợ cấp xã hội hàng tháng theo quy định tại khoản 1 và khoản 2 Điều 5 Nghị định số 20/2021/NĐ-CP ngày 15 tháng 3 năm 2021 của Chính phủ về chính sách trợ giúp xã hội đối với đối tượng bảo trợ xã hội.
+1. Đơn đề nghị Miễn, giảm học phí (theo mẫu);
+
+2. Quyết định về việc trợ cấp xã hội hoặc Giấy xác nhận mồ côi cả cha lẫn mẹ do UBND xã, phường, đặc khu trực thuộc cấp tỉnh cấp (Bản sao chứng thực hoặc Bản sao kèm bản chính để đối chiếu);
+
+3. Giấy cam kết (theo mẫu).
+
+3
+Sinh viên là người khuyết tật
+1. Đơn đề nghị Miễn, giảm học phí (theo mẫu);
+
+2. Quyết định về việc trợ cấp xã hội hoặc Giấy xác nhận khuyết tật (Bản sao chứng thực hoặc Bản sao kèm bản chính để đối chiếu);
+
+3. Giấy cam kết (theo mẫu).
+
+4
+Sinh viên là người dân tộc thiểu số có cha hoặc mẹ hoặc cả cha và mẹ hoặc ông, bà (trong trường hợp ở với ông, bà) thuộc hộ nghèo hoặc hộ cận nghèo theo quy định của Thủ tướng Chính phủ.
+1. Đơn đề nghị Miễn, giảm học phí (theo mẫu);
+
+2. Bản sao trích lục giấy khai sinh.
+
+3. Giấy xác nhận hộ nghèo hoặc hộ cận nghèo năm 2025 do UBND xã, phường, đặc khu trực thuộc cấp tỉnh cấp (Bản sao chứng thực hoặc Bản sao kèm bản chính để đối chiếu);
+
+4. Giấy cam kết (theo mẫu).
+
+5
+Sinh viên là người dân tộc thiểu số rất ít người theo quy định tại khoản 1 Điều 2 Nghị định số 57/2017/NĐ-CP ngày 09/5/2017 của Chính phủ (La Hủ, La Ha, Pà Thẻn, Lự, Ngái, Chứt, Lô Lô, Mảng, Cống, Cờ Lao, Bố Y, Si La, Pu Péo, Rơ Măm, BRâu, Ơ Đu) có nơi thường trú tại vùng có điều kiện kinh tế – xã hội khó khăn hoặc vùng đặc biệt khó khăn theo quy định hiện hành của cơ quan có thẩm quyền.
+1. Đơn đề nghị Miễn, giảm học phí (theo mẫu);
+
+2. Bản sao trích lục giấy khai sinh.
+
+3. Hình ảnh chụp màn hình mục “Thông tin cư trú” của ứng dụng VNeID;
+
+4. Bản photo Căn cước/Căn cước công dân;
+
+5. Giấy cam kết (theo mẫu).
+
+SINH VIÊN ĐƯỢC GIẢM 70% HỌC PHÍ
+
+6
+Sinh viên là người dân tộc thiểu số (ngoài đối tượng dân tộc thiểu số rất ít người) mà bản thân và cha hoặc mẹ có nơi thường trú tại thôn/bản đặc biệt khó khăn, xã khu vực III vùng đồng bào dân tộc thiểu số và miền núi, xã đặc biệt khó khăn vùng bãi ngang, ven biển và hải đảo theo quy định của cơ quan có thẩm quyền.
+1. Đơn đề nghị Miễn, giảm học phí (theo mẫu);
+
+2. Bản sao trích lục Giấy khai sinh
+
+3. Hình ảnh chụp màn hình mục “Thông tin cư trú” của ứng dụng VNeID;
+
+4. Bản photo Căn cước/Căn cước công dân;
+
+5. Giấy cam kết (theo mẫu).
+
+SINH VIÊN ĐƯỢC GIẢM 50% HỌC PHÍ
+
+7
+SV là con cán bộ, công chức, viên chức, công nhân mà cha hoặc mẹ bị tai nạn lao động hoặc mắc bệnh nghề nghiệp được hưởng trợ cấp thường xuyên.
+1. Đơn đề nghị Miễn, giảm học phí (theo mẫu);
+
+2. Bản sao trích lục giấy khai sinh.
+
+3. Quyết định hưởng trợ cấp hàng tháng của cha hoặc mẹ bị tai nạn lao động hoặc mắc bệnh nghề nghiệp do cơ quan bảo hiểm xã hội cấp (Bản sao chứng thực hoặc Bản sao kèm bản chính để đối chiếu);
+
+4. Giấy cam kết (theo mẫu).
+
+1.2. Quy định về miễn, giảm học phí:
+
+Việc miễn, giảm học phí sẽ được thực hiện trong suốt thời gian học tập tại nhà trường.
+
+Kinh phí cấp bù miễn, giảm học phí được cấp theo thời gian học thực tế nhưng không quá 10 tháng/năm học và thực hiện chi trả cho người học 2 lần trong năm (chỉ áp dụng đối với 2 học kỳ chính, không áp dụng đối với học kỳ hè và học kỳ dự thính).
+
+Trường hợp có sự trùng lặp về đối tượng hưởng chính sách miễn, giảm học phí quy định tại Nghị định 238/2025/NĐ-CP ngày 03/9/2025 của Chính phủ với các văn bản quy phạm pháp luật khác đang thực hiện có mức hỗ trợ cao hơn thì được hưởng theo mức hỗ trợ cao hơn quy định tại văn bản pháp luật khác.
+
+Không áp dụng miễn, giảm học phí đối với trường hợp đang hưởng lương hoặc sinh hoạt phí khi đi học, các trường hợp học cao học, nghiên cứu sinh.
+
+Không áp dụng chế độ miễn, giảm học phí đối với người học trong trường hợp đã hưởng chế độ này tại một cơ sở giáo dục nghề nghiệp hoặc cơ sở giáo dục đại học, nay tiếp tục học thêm ở một cơ sở giáo dục nghề nghiệp và giáo dục đại học khác cùng cấp học và trình độ đào tạo. Nếu người học thuộc đối tượng được miễn, giảm học phí đồng thời học ở nhiều cơ sở giáo dục hoặc nhiều khoa, nhiều ngành trong cùng một cơ sở giáo dục thì chỉ được hưởng một chế độ miễn, giảm học phí.
+
+Không áp dụng chế độ miễn giảm học phí, hỗ trợ chi phí học tập trong thời gian người học bị kỷ luật ngừng học hoặc buộc thôi học, bảo lưu, học lưu ban, học lại, học bổ sung. Trường hợp người học phải dừng học; học lại, bảo lưu, lưu ban (không quá một lần) do ốm đau, tai nạn hoặc dừng học vì lý do bất khả kháng không do kỷ luật hoặc tự thôi học thì thủ trưởng cơ sở giáo dục xem xét cho tiếp tục học tập theo quy định và tiếp tục được hưởng chính sách hỗ trợ quy định tại Nghị định 238/2025/NĐ-CP ngày 03/9/2025 của Chính phủ.
+
+Nhà trường chỉ thực hiện miễn, giảm học phí các học phần chính thức, không thực hiện miễn, giảm học phí các học phần học lại và chi phí hóa chất (nếu có).
+
+1.3 Các quy định của cơ quan có thẩm quyền ban hành danh mục vùng, địa bàn có điều kiện kinh tế-xã hội đặc biệt khó khăn (kèm theo Nghị định số 238/2025/NĐ-CP ngày 03/9/2025 của Chính phủ):
+
+Quyết định số 353/QĐ-TTg ngày 15 tháng 03 năm 2022 của Thủ tướng Chính phủ phê duyệt danh sách huyện nghèo, xã đặc biệt khó khăn vùng bãi ngang, ven biển và hải đảo giai đoạn 2021-2025;
+
+Quyết định 576/QĐ-TTg ngày 28/6/2024 của Thủ tướng Chính phủ công nhận 09 xã đặc biệt khó khăn vùng bãi ngang, ven biển và hải đảo giai đoạn 2021-2025 thoát khỏi tình trạng đặc biệt khó khăn;
+
+Quyết định 1535/QĐ-TTg ngày 09/12/2024 của Thủ tướng Chính phủ công nhận 08 xã đặc biệt khó khăn vùng bãi ngang, ven biển và hải đảo giai đoạn 2021-2025 thuộc các tỉnh Thanh Hóa, Quảng Trị, Bến Tre, Kiên Giang thoát khỏi tình trạng đặc biệt khó khăn năm 2024;
+
+Quyết định 389/QĐ-TTg năm 2025 công nhận 02 huyện nghèo giai đoạn 2021-2025 thuộc tỉnh Khánh Hòa thoát nghèo năm 2025 và 02 xã đặc biệt khó khăn vùng bãi ngang, ven biển và hải đảo giai đoạn 2021-2025 thuộc tỉnh Khánh Hòa, thành phố Huế thoát khỏi tình trạng đặc biệt khó khăn năm 2024 do Thủ tướng Chính phủ ban hành
+
+Quyết định 861/QĐ-TTgngày 04 tháng 6 năm 2021 của Thủ tướng Chính phủ về phê duyệt danh sách các xã khu vực III, khu vực II, khu vực I thuộc vùng đồng bào dân tộc thiểu số và miền núi giai đoạn 2021 – 2025;
+
+Quyết định số 1010/QĐ-TTg ngày 10/8/2018 của Thủ tướng Chính phủ về đơn vị hành chính cấp xã thuộc vùng khó khăn;
+
+Quyết định số 698/QĐ-TTg ngày 19/7/2024 của Thủ tướng Chính phủ về phê duyệt điều chỉnh, bổ sung và hiệu chỉnh danh sách các xã khu vực III, khu vực II, khu vực I thuộc vùng đồng bào dân tộc thiểu số và miền núi giai đoạn 2021-2025;
+
+Quyết định số 612/QĐ-UBDT ngày 16/9/2021 của Ủy ban Dân tộc phê duyệt danh sách thôn đặc biệt khó khăn vùng đồng bào dân tộc thiểu số và miền núi giai đoạn 2021-2025;
+
+Quyết định số 497/QĐ-UBDT ngày 30/7/2024 của Ủy ban Dân tộc (nay là Bộ Dân tộc và Tôn giáo) phê duyệt điều chỉnh, bổ sung và hiệu chỉnh tên huyện, xã, thôn đặc biệt khó khăn; thôn thuộc vùng dân tộc thiểu số và miền núi giai đoạn 2021-2025;
+
+Văn bản số 296/BDTTG-CS ngày 10/4/2025 của Bộ Dân tộc và Tôn giáo về việc hướng dẫn thực hiện chế độ, chính sách đối với đơn vị hành chính cấp xã, thôn vùng đồng bào dân tộc thiểu số và miền núi thực hiện sắp xếp, tổ chức lại;
+
+Các quy định của cơ quan có thẩm quyền sửa đổi, bổ sung hoặc thay thế về phê duyệt danh sách các xã đặc biệt khó khăn vùng bãi ngang ven biển và hải đảo, thôn đặc biệt khó khăn, xã khu vực III vùng dân tộc thiểu số và miền núi (nếu có).
+
+Lưu ý: đối với các sinh viên đã được xét miễn, giảm học phí trong HK1/25-26: đối tượng sinh viên thuộc diện hộ nghèo, hộ cận nghèo (đối tượng 4) phải nộp lại bản sao sổ hoặc giấy chứng nhận hộ nghèo/hộ cận nghèo của năm 2026; các đối tượng còn lại không cần phải nộp lại hồ sơ.
+
+TRỢ CẤP XÃ HỘI (TCXH)
+
+Stt
+
+Đối tượng
+Trợ cấp
+
+(đ/tháng)
+
+Hồ sơ cần phải nộp
+
+1
+Sinh viên mồ côi cả cha lẫn mẹ, không nơi nương tựa.
+
+100.000
+
+–     Đơn xin TCXH (theo mẫu);
+
+–     Giấy chứng tử của Cha và Mẹ;
+
+–     Bản sao trích lục Giấy khai sinh;
+
+–     Giấy xác nhận của địa phương về việc SV không có nguồn chu cấp thường xuyên;
+
+–     Giấy cam kết (theo mẫu).
+
+2
+Sinh viên tàn tật từ 41% trở lên và có khó khăn về kinh tế
+
+100.000
+
+–     Đơn xin TCXH (theo mẫu);
+
+–     Giấy giám định y khoa;
+
+–     Giấy xác nhận kinh tế khó khăn của địa phương;
+
+–     Giấy cam kết (theo mẫu).
+
+3
+SV là người dân tộc ít người thường trú trên 3 năm tại vùng cao (xem danh mục các khu vực Vùng cao tại mục 2.2)
+
+140.000
+
+–     Đơn xin TCXH (theo mẫu);
+
+–     Bản sao trích lục Giấy khai sinh;
+
+–     Hình ảnh chụp màn hình mục “Thông tin cư trú” của ứng dụng VNeID;
+
+–     Bản photo Căn cước/Căn cước công dân;
+
+–     Giấy cam kết (theo mẫu).
+
+4
+Sinh viên thuộc diện hộ nghèo/hộ cận nghèo vượt khó học tập: điểm học tập HK1/25-26 ≥ 7.0, Điểm rèn luyện HK1/25-26 ≥ 65đ)
+
+100.000
+
+–     Đơn xin TCXH (theo mẫu);
+
+–     Giấy chứng nhận Hộ nghèo/hộ cận nghèo năm 2026;
+
+–     Giấy cam kết (theo mẫu).
+
+–     Bảng điểm học tập và rèn luyện HK1/25-26 nhà trường sẽ tự cập nhật sau khi có kết quả.
+
+Lưu ý: Các sinh viên thuộc đối tượng 4 đã được Trợ cấp xã hội trong HK1/25-26 phải nộp lại hồ sơ mới; các đối tượng còn lại không cần phải nộp lại hồ sơ.
+
+CÁC CHÍNH SÁCH
+
+STT
+
+CHÍNH SÁCH
+HỒ SƠ CẦN NỘP
+
+LƯU Ý
+
+1
+CHÍNH SÁCH SINH VIÊN DÂN TỘC THIỂU SỐ
+
+3.1 Đối tượng:
+
+Sinh viên hệ chính quy là người dân tộc thiểu số thuộc hộ nghèo, hộ cận nghèo.
+
+Không áp dụng đối với sinh viên cử tuyển, các đối tượng chính sách được xét tuyển và học đại học, cao đẳng sau khi hoàn thành chương trình dự bị đại học.
+
+3.2 Chính sách về hỗ trợ: được hỗ trợ chi phí học tập bằng 60% mức lương cơ sở và được cấp 10 tháng/năm học; số năm được hưởng hỗ trợ chi phí học tập theo thời gian đào tạo chính thức.
+–  Đơn đề nghị hỗ trợ chi phí học tập (theo mẫu);
+
+–  Bản sao Giấy chứng nhận là hộ nghèo hoặc hộ cận nghèo do ủy ban nhân dân xã, phường, đặc khu trực thuộc cấp tỉnh cấp (của năm 2026).
+
+–  Bản sao trích lục giấy khai sinh.
+
+–  Giấy cam kết (theo mẫu).
+
+
+
+
+
+
+
+
+Tất cả các sinh viên phải nộp lại hồ sơ mới
+
+2
+CHÍNH SÁCH SINH VIÊN DÂN TỘC THIỂU SỐ RẤT ÍT NGƯỜI
+
+4.1 Đối tượng: Sinh viên hệ chính quy là người dân tộc thiểu số rất ít người (Cống, Mảng, Pu Péo, Si La, Cờ Lao, Bố Y, La Ha, Ngái, Chứt, Ơ Đu, Brâu, Rơ Măm, Lô Lô, Lự, Pà Thẻn, La Hủ).
+
+4.2 Chính sách về hỗ trợ: được hỗ trợ chi phí học tập bằng 100% mức lương cơ sở/người/tháng và được cấp 12 tháng/năm học.
+–  Đơn đề nghị hỗ trợ chi phí học tập (theo mẫu)
+
+–  Bản sao trích lục giấy khai sinh.
+
+–  Giấy cam kết (theo mẫu).
+
+
+
+
+Các sinh viên đã được hưởng chính sách này trong HK1/25-26: không cần phải nộp lại hồ sơ
+
+3
+CHÍNH SÁCH SINH VIÊN KHUYẾT TẬT
+
+5.1 Đối tượng: sinh viên hệ chính quy là người khuyết tật thuộc diện hộ nghèo, hộ cận nghèo
+
+5.2 Chính sách về học bổng: được hưởng học bổng mỗi tháng bằng 80% mức lương cơ sở theo quy định của chính phủ trong từng học kỳ, cấp 10 tháng/năm học.
+
+5.3 Chính sách về hỗ trợ phương tiện và đồ dùng học tập: được hỗ trợ kinh phí để mua sắm phương tiện, đồ dùng học tập 1.000.000đ/người/năm học.
+–  Bản sao chứng thực Giấy chứng nhận về khuyết tật do cơ quan có thẩm quyền cấp theo quy định của Nhà nước;
+
+–  Bản sao Giấy chứng nhận là hộ nghèo hoặc hộ cận nghèo do ủy ban nhân dân xã, phường, đặc khu trực thuộc cấp tỉnh cấp (của năm 2026);
+
+–  Giấy cam kết (theo mẫu).
+
+
+
+
+
+
+
+
+Tất cả các sinh viên phải nộp lại hồ sơ mới
+
+
+
+HÌNH THỨC NHẬN HỒ SƠ:
+
+Sinh viên thuộc các đối tượng trên nộp hồ sơ miễn, giảm học phí và các chế độ chính sách phải nộp theo 2 hình thức hồ sơ điện tử và hồ sơ giấy.
+
+Hồ sơ giấy:nộp trực tiếp tại Phòng Công tác sinh viên (ở cơ sở 1 hoặc cơ sở 2)
+
+Hồ sơ điện tử:sinh viên sử dụng email sinh viên do trường cấp nộp hồ sơ điện tử về phòng Công tác sinh viên (congtacsinhvien@hcmus.edu.vn) theo hướng dẫn:
+
+Tiêu đề: MSSV-CDCS HK2/25-26 (gửi 01 email duy nhất)
+
+Tên file đính kèm: MSSV-[viết tắt tên chế độ chính sách ở các mục 1,2,3,4]
+
+Mỗi chế độ chính sách được lưu thành 1 file .pdf duy nhất: các hồ sơ đều phải là ảnh scan/chụp bản chính theo thứ tự từ trên xuống dưới như trong mục “hồ sơ cần nộp”.
+
+Ví dụ: sinh viên 22110000 nộp cùng lúc 04 chế độ chính sách thì sẽ gửi 01 email với thông tin như sau:
+
+Tiêu đề: 22110000-CDCS HK2/25-26
+
+Tên 04 file đính kèm gồm: 22110000-MGHP, 22110000-TCXH, 22110000-SVDT, 22110000-SVKT
+
+THỜI GIAN NHẬN HỒ SƠ (ĐỐI VỚI CẢ 2 HÌNH THỨC HỒ SƠ GIẤY VÀ ĐIỆN TỬ): từ ngày 02/03/2026 đến ngày 10/03/2026.
+
+Trong quá trình thực hiện nếu có thắc mắc, sinh viên liên hệ với phòng Công tác sinh viên qua email congtacsinhvien@hcmus.edu.vn để được hướng dẫn./.
+
+Post Views: 504
+
+We use cookies on our website to give you the most relevant experience by remembering your preferences and repeat visits. By clicking “Accept All”, you consent to the use of ALL the cookies. However, you may visit "Cookie Settings" to provide a controlled consent.
+
+Cookie SettingsAccept All
+
+Manage consent
+
+Close
+
+Privacy Overview
+
+This website uses cookies to improve your experience while you navigate through the website. Out of these, the cookies that are categorized as necessary are stored on your browser as they are essential for the working of basic functionalities of the website. We also use third-party cookies that help us analyze and understand how you use this website. These cookies will be stored in your browser only with your consent. You also have the option to opt-out of these cookies. But opting out of some of these cookies may affect your browsing experience.
+
+Necessary
+
+Necessary
+
+Always Enabled
+
+Necessary cookies are absolutely essential for the website to function properly. These cookies ensure basic functionalities and security features of the website, anonymously.
+
+CookieDurationDescription
+
+cookielawinfo-checkbox-analytics11 monthsThis cookie is set by GDPR Cookie Consent plugin. The cookie is used to store the user consent for the cookies in the category "Analytics".
+
+cookielawinfo-checkbox-functional11 monthsThe cookie is set by GDPR cookie consent to record the user consent for the cookies in the category "Functional".
+
+cookielawinfo-checkbox-necessary11 monthsThis cookie is set by GDPR Cookie Consent plugin. The cookies is used to store the user consent for the cookies in the category "Necessary".
+
+cookielawinfo-checkbox-others11 monthsThis cookie is set by GDPR Cookie Consent plugin. The cookie is used to store the user consent for the cookies in the category "Other.
+
+cookielawinfo-checkbox-performance11 monthsThis cookie is set by GDPR Cookie Consent plugin. The cookie is used to store the user consent for the cookies in the category "Performance".
+
+viewed_cookie_policy11 monthsThe cookie is set by the GDPR Cookie Consent plugin and is used to store whether or not user has consented to the use of cookies. It does not store any personal data.
+
+Functional
+
+Functional
+
+Functional cookies help to perform certain functionalities like sharing the content of the website on social media platforms, collect feedbacks, and other third-party features.
+
+Performance
+
+Performance
+
+Performance cookies are used to understand and analyze the key performance indexes of the website which helps in delivering a better user experience for the visitors.
+
+Analytics
+
+Analytics
+
+Analytical cookies are used to understand how visitors interact with the website. These cookies help provide information on metrics the number of visitors, bounce rate, traffic source, etc.
+
+Advertisement
+
+Advertisement
+
+Advertisement cookies are used to provide visitors with relevant ads and marketing campaigns. These cookies track visitors across websites and collect information to provide customized ads.
+
+Others
+
+Others
+
+Other uncategorized cookies are those that are being analyzed and have not been classified into a category as yet.
+
+SAVE & ACCEPT

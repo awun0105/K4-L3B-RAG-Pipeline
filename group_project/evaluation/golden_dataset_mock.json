@@ -1,0 +1,18 @@
+[
+  {"question":"Đại học Alpha có những phương thức xét tuyển nào?","expected_answer":"Alpha xét điểm thi tốt nghiệp THPT, học bạ và tuyển thẳng.","expected_context":"admission_alpha_methods_2026"},
+  {"question":"Alpha xét tuyển học bạ không?","expected_answer":"Có, theo dữ liệu mock Alpha có xét học bạ.","expected_context":"admission_alpha_methods_2026"},
+  {"question":"Phương thức tuyển sinh của Beta là gì?","expected_answer":"Beta xét điểm thi tốt nghiệp THPT và học bạ.","expected_context":"admission_beta_methods_2026"},
+  {"question":"Beta có tuyển thẳng không?","expected_answer":"Nguồn mock chỉ nêu điểm thi THPT và học bạ.","expected_context":"admission_beta_methods_2026"},
+  {"question":"Học phí Đại học Alpha bao nhiêu?","expected_answer":"25 đến 35 triệu đồng mỗi năm tùy ngành.","expected_context":"admission_alpha_tuition_2026"},
+  {"question":"Mức học phí chương trình chuẩn của Beta?","expected_answer":"22 đến 30 triệu đồng mỗi năm tùy ngành.","expected_context":"admission_beta_tuition_2026"},
+  {"question":"Học phí Đại học Gamma là bao nhiêu?","expected_answer":"28 triệu đồng mỗi năm.","expected_context":"admission_gamma_tuition_2026"},
+  {"question":"So sánh học phí Alpha và Beta.","expected_answer":"Alpha 25–35 triệu đồng; Beta 22–30 triệu đồng mỗi năm.","expected_context":"admission_alpha_tuition_2026; admission_beta_tuition_2026"},
+  {"question":"Điểm chuẩn CNTT Alpha năm 2025?","expected_answer":"26,5 điểm theo điểm thi tốt nghiệp THPT.","expected_context":"admission_alpha_cutoff_2025"},
+  {"question":"CNTT của Beta lấy bao nhiêu điểm năm 2025?","expected_answer":"24,0 điểm theo điểm thi tốt nghiệp THPT.","expected_context":"admission_beta_cutoff_2025"},
+  {"question":"So sánh điểm chuẩn CNTT Alpha và Beta.","expected_answer":"Alpha 26,5 điểm; Beta 24,0 điểm.","expected_context":"admission_alpha_cutoff_2025; admission_beta_cutoff_2025"},
+  {"question":"Alpha tuyển bao nhiêu sinh viên năm 2026?","expected_answer":"5.000 sinh viên dự kiến.","expected_context":"admission_alpha_quota_2026"},
+  {"question":"Chỉ tiêu tuyển sinh Beta là bao nhiêu?","expected_answer":"3.200 sinh viên dự kiến.","expected_context":"admission_beta_quota_2026"},
+  {"question":"Alpha có những ngành nào?","expected_answer":"Công nghệ thông tin, Quản trị kinh doanh và Ngôn ngữ Anh.","expected_context":"admission_alpha_programs_2026"},
+  {"question":"Ngành Y khoa có ở Alpha không?","expected_answer":"Thông tin hiện có chưa đủ để xác minh.","expected_context":"no_evidence"},
+  {"question":"Thời tiết Hà Nội hôm nay thế nào?","expected_answer":"Thông tin hiện có chưa đủ để xác minh.","expected_context":"no_evidence"}
+]

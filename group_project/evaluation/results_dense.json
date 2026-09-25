@@ -1,0 +1,252 @@
+[
+  {
+    "question": "Thang điểm đánh giá kết quả rèn luyện của sinh viên Trường ĐH Khoa học Tự nhiên là bao nhiêu?",
+    "expected_answer": "Điểm rèn luyện của sinh viên được đánh giá theo thang điểm 100 theo từng học kỳ.",
+    "expected_context": "qd-1028-2739-qc-drl-2020_2023.md - Điều 3: Điểm rèn luyện được đánh giá theo thang điểm 100.",
+    "generated_answer": "Thông tin trong nguồn hiện có chưa đủ để xác minh câu hỏi này.",
+    "retrieval_method": "dense",
+    "sources": [],
+    "latency": 17.874,
+    "faithfulness": 0.0,
+    "answer_relevance": 0.0,
+    "context_recall": 0.812,
+    "context_precision": 1.0
+  },
+  {
+    "question": "Kết quả rèn luyện của sinh viên được phân loại thành những mức nào?",
+    "expected_answer": "Kết quả rèn luyện được phân thành 6 loại: Xuất sắc (90 - 100 điểm), Tốt (80 - 89 điểm), Khá (65 - 79 điểm), Trung bình (50 - 64 điểm), Yếu (35 - 49 điểm) và Kém (dưới 35 điểm).",
+    "expected_context": "qd-1028-2739-qc-drl-2020_2023.md - Điều 11: Phân loại kết quả rèn luyện từ xuất sắc đến kém.",
+    "generated_answer": "Thông tin trong nguồn hiện có chưa đủ để xác minh câu hỏi này.",
+    "retrieval_method": "dense",
+    "sources": [],
+    "latency": 3.662,
+    "faithfulness": 0.0,
+    "answer_relevance": 0.0,
+    "context_recall": 0.792,
+    "context_precision": 1.0
+  },
+  {
+    "question": "Ý thức tham gia học tập trong quy chế điểm rèn luyện chiếm tối đa bao nhiêu điểm?",
+    "expected_answer": "Đánh giá về ý thức tham gia học tập có khung điểm từ 0 đến 20 điểm.",
+    "expected_context": "qd-1028-2739-qc-drl-2020_2023.md - Điều 4: Đánh giá về ý thức tham gia học tập (từ 0 – 20 điểm).",
+    "generated_answer": "Thông tin trong nguồn hiện có chưa đủ để xác minh câu hỏi này.",
+    "retrieval_method": "dense",
+    "sources": [],
+    "latency": 3.298,
+    "faithfulness": 0.0,
+    "answer_relevance": 0.0,
+    "context_recall": 0.909,
+    "context_precision": 1.0
+  },
+  {
+    "question": "Ý thức chấp hành nội quy, quy chế trong nhà trường được tính tối đa bao nhiêu điểm rèn luyện?",
+    "expected_answer": "Đánh giá về ý thức chấp hành nội quy, quy chế, quy định trong Nhà Trường có khung điểm từ 0 đến 25 điểm.",
+    "expected_context": "qd-1028-2739-qc-drl-2020_2023.md - Điều 5: Đánh giá về ý thức chấp hành nội quy, quy chế trong Nhà Trường: từ 0 – 25 điểm.",
+    "generated_answer": "Thông tin trong nguồn hiện có chưa đủ để xác minh câu hỏi này.",
+    "retrieval_method": "dense",
+    "sources": [],
+    "latency": 3.309,
+    "faithfulness": 0.0,
+    "answer_relevance": 0.0,
+    "context_recall": 0.667,
+    "context_precision": 1.0
+  },
+  {
+    "question": "Điều kiện để sinh viên được xét và công nhận tốt nghiệp đại học tại HCMUS là gì?",
+    "expected_answer": "Sinh viên được xét và công nhận tốt nghiệp khi: không bị kỷ luật đình chỉ hay truy cứu trách nhiệm hình sự; tích lũy đủ học phần và tín chỉ theo CTĐT; hoàn tất chứng chỉ Giáo dục quốc phòng - An ninh và Giáo dục thể chất; đạt chuẩn ngoại ngữ và tin học của Trường; nộp hồ sơ xét tốt nghiệp đúng hạn.",
+    "expected_context": "qd-1175_quy-che-dao-tao-trinh-do-dh-2021.md - Điều 17: Sinh viên được xét và công nhận tốt nghiệp khi có đủ các điều kiện tích lũy tín chỉ, GDQP, GDTC, ngoại ngữ, tin học.",
+    "generated_answer": "Sinh viên được xét và công nhận tốt nghiệp khi có đủ các điều kiện sau:\n1. Cho đến thời điểm xét tốt nghiệp không bị truy cứu trách nhiệm hình sự hoặc không đang trong thời gian bị kỷ luật ở mức đình chỉ học tập [5].\n2. Tích lũy đủ số học phần và tổng số tín chỉ theo quy định của chương trình đào tạo [5].",
+    "retrieval_method": "dense",
+    "sources": [
+      "legal/qd-1175_quy-che-dao-tao-trinh-do-dh-2021.md::chunk-78",
+      "legal/stsv2025_online.md::chunk-351",
+      "legal/qd-1175_quy-che-dao-tao-trinh-do-dh-2021.md::chunk-50",
+      "legal/stsv2025_online.md::chunk-323",
+      "legal/qd-1175_quy-che-dao-tao-trinh-do-dh-2021.md::chunk-74"
+    ],
+    "latency": 3.243,
+    "faithfulness": 1.0,
+    "answer_relevance": 0.893,
+    "context_recall": 0.648,
+    "context_precision": 1.0
+  },
+  {
+    "question": "Bằng tốt nghiệp đại học được cấp trong thời hạn bao lâu sau khi sinh viên đủ điều kiện?",
+    "expected_answer": "Sinh viên được cấp bằng tốt nghiệp trong thời hạn 03 tháng tính từ thời điểm đáp ứng đầy đủ điều kiện tốt nghiệp và hoàn thành các nghĩa vụ với nhà Trường.",
+    "expected_context": "qd-1175_quy-che-dao-tao-trinh-do-dh-2021.md - Điều 18: cấp bằng tốt nghiệp trong thời hạn 03 tháng tính từ thời điểm sinh viên đáp ứng đầy đủ điều kiện tốt nghiệp.",
+    "generated_answer": "Bằng tốt nghiệp được cấp trong thời hạn 03 tháng tính từ thời điểm sinh viên đáp ứng đầy đủ điều kiện tốt nghiệp và hoàn thành các nghĩa vụ với nhà Trường [1][2].",
+    "retrieval_method": "dense",
+    "sources": [
+      "legal/qd-1175_quy-che-dao-tao-trinh-do-dh-2021.md::chunk-78",
+      "legal/stsv2025_online.md::chunk-351",
+      "legal/qd-1175_quy-che-dao-tao-trinh-do-dh-2021.md::chunk-74",
+      "legal/stsv2025_online.md::chunk-347",
+      "legal/qd-1175_quy-che-dao-tao-trinh-do-dh-2021.md::chunk-23"
+    ],
+    "latency": 3.082,
+    "faithfulness": 1.0,
+    "answer_relevance": 0.833,
+    "context_recall": 1.0,
+    "context_precision": 1.0
+  },
+  {
+    "question": "Hạng tốt nghiệp loại xuất sắc và giỏi có bị hạ bậc không nếu sinh viên bị kỷ luật?",
+    "expected_answer": "Hạng tốt nghiệp của sinh viên có điểm trung bình tích lũy loại xuất sắc và giỏi sẽ bị giảm đi một mức nếu đã bị kỷ luật từ mức cảnh cáo trở lên trong thời gian học.",
+    "expected_context": "qd-1175_quy-che-dao-tao-trinh-do-dh-2021.md - Điều 18: Hạng tốt nghiệp xuất sắc và giỏi sẽ bị giảm một mức nếu bị kỷ luật từ cảnh cáo trở lên.",
+    "generated_answer": "Hạng tốt nghiệp của sinh viên có điểm trung bình tích lũy loại xuất sắc và giỏi sẽ bị giảm đi một mức nếu đã bị kỷ luật từ mức cảnh cáo trở lên trong thời gian học [1][2].",
+    "retrieval_method": "dense",
+    "sources": [
+      "legal/qd-1175_quy-che-dao-tao-trinh-do-dh-2021.md::chunk-79",
+      "legal/stsv2025_online.md::chunk-352",
+      "legal/qd-1175_quy-che-dao-tao-trinh-do-dh-2021.md::chunk-64",
+      "legal/stsv2025_online.md::chunk-337",
+      "legal/stsv2025_online.md::chunk-495"
+    ],
+    "latency": 3.246,
+    "faithfulness": 1.0,
+    "answer_relevance": 0.923,
+    "context_recall": 1.0,
+    "context_precision": 1.0
+  },
+  {
+    "question": "Những đối tượng sinh viên nào được miễn 100% học phí?",
+    "expected_answer": "Sinh viên được miễn 100% học phí bao gồm: Người có công với cách mạng; Sinh viên khuyết tật; Sinh viên 16-22 tuổi học văn bằng thứ nhất hưởng trợ cấp xã hội hàng tháng; Sinh viên là người dân tộc thiểu số thuộc hộ nghèo/cận nghèo; Sinh viên dân tộc thiểu số rất ít người ở vùng khó khăn.",
+    "expected_context": "quydinh-hbkk-qd575-2024.md - Mục I: Đối tượng được miễn 100% học phí theo Nghị định 81/2021/NĐ-CP.",
+    "generated_answer": "Thông tin trong nguồn hiện có chưa đủ để xác minh câu hỏi này.",
+    "retrieval_method": "dense",
+    "sources": [],
+    "latency": 3.029,
+    "faithfulness": 0.0,
+    "answer_relevance": 0.0,
+    "context_recall": 0.731,
+    "context_precision": 1.0
+  },
+  {
+    "question": "Sinh viên dân tộc thiểu số ở vùng đặc biệt khó khăn được giảm bao nhiêu phần trăm học phí?",
+    "expected_answer": "Sinh viên là người dân tộc thiểu số ở thôn/bản đặc biệt khó khăn, xã khu vực III vùng dân tộc và miền núi, xã đặc biệt khó khăn bãi ngang ven biển hải đảo được giảm 70% học phí.",
+    "expected_context": "quydinh-hbkk-qd575-2024.md - Mục II: Đối tượng được giảm 70% học phí.",
+    "generated_answer": "Sinh viên là người dân tộc thiểu số (ngoài đối tượng dân tộc thiểu số rất ít người) ở thôn/bản đặc biệt khó khăn, xã khu vực III vùng dân tộc và miền núi, xã đặc biệt khó khăn vùng bãi ngang ven biển hải đảo được giảm **70% học phí** [1][2]. \n\n(Theo thông báo thực hiện miễn, giảm học phí, đối tượng này áp dụng khi bản thân và cha hoặc mẹ có nơi thường trú tại các khu vực trên) [3].",
+    "retrieval_method": "dense",
+    "sources": [
+      "legal/quydinh-hbkk-qd575-2024.md::chunk-4",
+      "legal/stsv2025_online.md::chunk-642",
+      "news/article_02.md::chunk-11",
+      "legal/quydinh-hbkk-qd575-2024.md::chunk-7",
+      "legal/stsv2025_online.md::chunk-645"
+    ],
+    "latency": 3.319,
+    "faithfulness": 0.913,
+    "answer_relevance": 0.889,
+    "context_recall": 1.0,
+    "context_precision": 1.0
+  },
+  {
+    "question": "Đối tượng sinh viên nào được giảm 50% học phí tại trường?",
+    "expected_answer": "Sinh viên là con cán bộ, công chức, viên chức, công nhân mà cha hoặc mẹ bị tai nạn lao động hoặc mắc bệnh nghề nghiệp được hưởng trợ cấp thường xuyên.",
+    "expected_context": "quydinh-hbkk-qd575-2024.md - Mục III: Đối tượng được giảm 50% học phí.",
+    "generated_answer": "Sinh viên được giảm 50% học phí là sinh viên là con cán bộ, công chức, viên chức, công nhân mà cha hoặc mẹ bị tai nạn lao động hoặc mắc bệnh nghề nghiệp được hưởng trợ cấp thường xuyên [1][2].",
+    "retrieval_method": "dense",
+    "sources": [
+      "legal/quydinh-hbkk-qd575-2024.md::chunk-4",
+      "legal/stsv2025_online.md::chunk-642",
+      "legal/quyet-dinh-ve-viec-ban-hanh-quy-dinh-ve-noi-tru-tai-ky-tuc-xa-truong.md::chunk-79",
+      "legal/stsv2025_online.md::chunk-519",
+      "news/article_02.md::chunk-27"
+    ],
+    "latency": 3.681,
+    "faithfulness": 1.0,
+    "answer_relevance": 0.773,
+    "context_recall": 1.0,
+    "context_precision": 1.0
+  },
+  {
+    "question": "Mức trợ cấp xã hội cho sinh viên mồ côi cả cha lẫn mẹ không nơi nương tựa là bao nhiêu?",
+    "expected_answer": "Sinh viên mồ côi cả cha lẫn mẹ không nơi nương tựa được nhận mức trợ cấp xã hội là 100.000 đồng/tháng.",
+    "expected_context": "quydinh-hbkk-qd575-2024.md - Thông tin trợ cấp xã hội: Đối tượng được trợ cấp 100.000đ/tháng gồm sinh viên mồ côi cả cha lẫn mẹ.",
+    "generated_answer": "Mức trợ cấp xã hội cho sinh viên mồ côi cả cha lẫn mẹ, không nơi nương tựa là 100.000đ/tháng [1][2].",
+    "retrieval_method": "dense",
+    "sources": [
+      "legal/quydinh-hbkk-qd575-2024.md::chunk-6",
+      "legal/stsv2025_online.md::chunk-644",
+      "legal/quydinh-hbkk-qd575-2024.md::chunk-13",
+      "legal/stsv2025_online.md::chunk-651",
+      "legal/quy-che-drl-2016.md::chunk-28"
+    ],
+    "latency": 3.001,
+    "faithfulness": 0.941,
+    "answer_relevance": 0.938,
+    "context_recall": 0.947,
+    "context_precision": 1.0
+  },
+  {
+    "question": "Những sinh viên nào được ưu tiên nội trú tại Ký túc xá ĐHQG-HCM?",
+    "expected_answer": "Sinh viên có hộ khẩu thường trú tại các tỉnh/thành phố ngoài TP.HCM và các huyện ngoại thành TP.HCM đều được ưu tiên bố trí nội trú tại Ký túc xá ĐHQG-HCM.",
+    "expected_context": "quyet-dinh-ve-viec-ban-hanh-quy-dinh-ve-noi-tru-tai-ky-tuc-xa-truong.md - Chủ trương sinh viên có hộ khẩu ngoài TP.HCM và huyện ngoại thành đều được nội trú tại KTX ĐHQG-HCM.",
+    "generated_answer": "Thông tin trong nguồn hiện có chưa đủ để xác minh câu hỏi này.",
+    "retrieval_method": "dense",
+    "sources": [],
+    "latency": 3.028,
+    "faithfulness": 0.0,
+    "answer_relevance": 0.0,
+    "context_recall": 0.926,
+    "context_precision": 1.0
+  },
+  {
+    "question": "Sinh viên bị xử lý buộc thôi học trong những trường hợp nào theo quy chế đào tạo?",
+    "expected_answer": "Sinh viên bị buộc thôi học khi bị cảnh báo học tập vượt quá số lần quy định hoặc thời gian học tập vượt quá giới hạn tối đa cho phép theo quy chế đào tạo tín chỉ.",
+    "expected_context": "qd-1175_quy-che-dao-tao-trinh-do-dh-2021.md - Điều 16: Xử lý kết quả học tập theo tín chỉ, buộc thôi học khi quá số lần cảnh báo hoặc quá thời gian tối đa.",
+    "generated_answer": "Thông tin trong nguồn hiện có chưa đủ để xác minh câu hỏi này.",
+    "retrieval_method": "dense",
+    "sources": [],
+    "latency": 3.609,
+    "faithfulness": 0.0,
+    "answer_relevance": 0.0,
+    "context_recall": 0.647,
+    "context_precision": 1.0
+  },
+  {
+    "question": "Điểm học phần Giáo dục quốc phòng và Giáo dục thể chất có tính vào điểm trung bình tích lũy tốt nghiệp không?",
+    "expected_answer": "Không tính vào điểm trung bình tích lũy, các học phần Giáo dục quốc phòng - An ninh và Giáo dục thể chất chỉ cấp chứng chỉ và là điều kiện cần để được xét tốt nghiệp.",
+    "expected_context": "qd-1175_quy-che-dao-tao-trinh-do-dh-2021.md - Điều 11 & Điều 17: GDQP và GDTC cấp chứng chỉ, không tính vào điểm trung bình tích lũy.",
+    "generated_answer": "Không, kết quả thi của các học phần Giáo dục quốc phòng - An ninh và Giáo dục thể chất không được tính vào điểm trung bình hoặc điểm trung bình tích lũy [1][2].",
+    "retrieval_method": "dense",
+    "sources": [
+      "legal/qd-1175_quy-che-dao-tao-trinh-do-dh-2021.md::chunk-66",
+      "legal/stsv2025_online.md::chunk-339",
+      "legal/qd-1175_quy-che-dao-tao-trinh-do-dh-2021.md::chunk-80",
+      "legal/stsv2025_online.md::chunk-353",
+      "legal/qd-1175_quy-che-dao-tao-trinh-do-dh-2021.md::chunk-75"
+    ],
+    "latency": 3.046,
+    "faithfulness": 1.0,
+    "answer_relevance": 0.952,
+    "context_recall": 0.968,
+    "context_precision": 1.0
+  },
+  {
+    "question": "Trường Đại học Khoa học Tự nhiên có đào tạo chuyên ngành Bác sĩ Răng Hàm Mặt không?",
+    "expected_answer": "Thông tin trong nguồn hiện có chưa đủ để xác minh câu hỏi này.",
+    "expected_context": "Hỏi ngoài phạm vi (out-of-domain). HCMUS không có chương trình đào tạo Bác sĩ Răng Hàm Mặt trong tài liệu.",
+    "generated_answer": "Thông tin trong nguồn hiện có chưa đủ để xác minh câu hỏi này.",
+    "retrieval_method": "dense",
+    "sources": [],
+    "latency": 3.248,
+    "faithfulness": 1.0,
+    "answer_relevance": 1.0,
+    "context_recall": 1.0,
+    "context_precision": 1.0
+  },
+  {
+    "question": "Dự báo thời tiết tại Thành phố Hồ Chí Minh ngày mai mưa hay nắng?",
+    "expected_answer": "Thông tin trong nguồn hiện có chưa đủ để xác minh câu hỏi này.",
+    "expected_context": "Hỏi ngoài phạm vi (out-of-domain). Tài liệu học vụ của Trường không chứa thông tin dự báo thời tiết.",
+    "generated_answer": "Thông tin trong nguồn hiện có chưa đủ để xác minh câu hỏi này.",
+    "retrieval_method": "dense",
+    "sources": [],
+    "latency": 3.113,
+    "faithfulness": 1.0,
+    "answer_relevance": 1.0,
+    "context_recall": 1.0,
+    "context_precision": 1.0
+  }
+]
