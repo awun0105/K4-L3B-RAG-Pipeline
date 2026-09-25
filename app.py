@@ -9,6 +9,7 @@ except ImportError:
     def load_dotenv() -> bool:
         return False
 
+from src.conversation_memory import reformulate_query
 from src.task10_generation import generate_with_citation
 from ui.components import render_empty_state, render_header, render_message, render_sidebar
 from ui.data_views import render_corpus_view, render_retrieval_view
@@ -32,9 +33,13 @@ def handle_query(query: str, top_k: int) -> None:
     """Single UI entry point for both chat input and suggestion cards."""
     if not query.strip():
         return
+    prior_messages = list(st.session_state.messages)
     st.session_state.messages.append({"role": "user", "content": query})
-    with st.spinner("Đang tìm nguồn phù hợp…"):
-        result = generate_with_citation(query, top_k)
+    with st.spinner("Đang phân tích ngữ cảnh và tìm nguồn phù hợp…"):
+        effective_query = reformulate_query(query, prior_messages) if prior_messages else query
+        result = generate_with_citation(effective_query, top_k)
+        if effective_query != query:
+            result["reformulated_query"] = effective_query
     st.session_state.messages.append({"role": "assistant", **result})
     st.rerun()
 

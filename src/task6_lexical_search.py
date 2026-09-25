@@ -48,7 +48,7 @@ def lexical_search(query: str, top_k: int = 10) -> list[dict]:
     """Trả về BM25 SearchResult theo score giảm dần."""
     global CORPUS, _CACHED_BM25, _CACHED_CORPUS_ID
 
-    if top_k <= 0:
+    if not query.strip() or top_k <= 0:
         return []
 
     # CORPUS có thể do người dùng gán trước; nếu còn rỗng thì nạp một lần từ
@@ -58,13 +58,16 @@ def lexical_search(query: str, top_k: int = 10) -> list[dict]:
     if not CORPUS:
         return []
 
+    tokens = _tokenize(query)
+    if not tokens:
+        return []
+
     corpus_id = id(CORPUS), len(CORPUS)
     if _CACHED_BM25 is None or _CACHED_CORPUS_ID != corpus_id:
         _CACHED_BM25 = build_bm25_index(CORPUS)
         _CACHED_CORPUS_ID = corpus_id
 
-    scores = _CACHED_BM25.get_scores(_tokenize(query))
-
+    scores = _CACHED_BM25.get_scores(tokens)
 
     # sorted ổn định nên các score bằng nhau giữ nguyên thứ tự corpus.
     order = sorted(range(len(CORPUS)), key=lambda index: -float(scores[index]))
@@ -76,8 +79,12 @@ def lexical_search(query: str, top_k: int = 10) -> list[dict]:
     ranked = positive or order
 
     results = []
-    for index in ranked[:top_k]:
+    seen_ids = set()
+    for index in ranked:
         item = CORPUS[index]
+        if item["id"] in seen_ids:
+            continue
+        seen_ids.add(item["id"])
         results.append(
             {
                 "id": item["id"],
@@ -87,6 +94,8 @@ def lexical_search(query: str, top_k: int = 10) -> list[dict]:
                 "retrieval_method": "bm25",
             }
         )
+        if len(results) >= top_k:
+            break
     return results
 
 

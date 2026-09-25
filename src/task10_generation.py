@@ -34,16 +34,16 @@ TEMPERATURE = 0.3
 LLM_PROVIDER = os.getenv("LLM_PROVIDER", "openai")
 LLM_MODEL = os.getenv("LLM_MODEL", "")
 
-SYSTEM_PROMPT = """Bạn là trợ lý thông tin tuyển sinh đại học Việt Nam.
+SYSTEM_PROMPT = """Bạn là trợ lý thông tin học vụ, quy chế đào tạo, điểm rèn luyện và chính sách sinh viên Trường Đại học Khoa học Tự nhiên, ĐHQG-HCM (HCMUS).
 Chỉ trả lời dựa trên CONTEXT được cung cấp. Không dùng kiến thức bên ngoài để
-khẳng định điểm chuẩn, học phí, chỉ tiêu, phương thức, thời gian hay điều kiện
-xét tuyển. Không suy đoán, không tạo URL, nguồn hay citation mới.
+khẳng định quy định, điểm chuẩn, học phí, chỉ tiêu, điều kiện tốt nghiệp, mức
+trợ cấp hay phân loại rèn luyện. Không suy đoán, không tạo URL, nguồn hay citation mới.
 
 Mỗi khẳng định có bằng chứng phải dùng citation dạng [1] hoặc [1][2], với số
-có trong CONTEXT. Nếu context không đủ, hãy trả lời đúng câu: "Thông tin trong
-nguồn hiện có chưa đủ để xác minh câu hỏi này." Với yêu cầu so sánh, chỉ so
-sánh các trường có bằng chứng và nêu rõ bên còn thiếu dữ liệu. Trả lời ngắn,
-rõ ràng và trực tiếp bằng tiếng Việt."""
+có trong CONTEXT. Nếu context không đủ hoặc câu hỏi nằm ngoài phạm vi tài liệu,
+hãy trả lời đúng câu: "Thông tin trong nguồn hiện có chưa đủ để xác minh câu hỏi này."
+Với yêu cầu so sánh, chỉ so sánh các nội dung có bằng chứng và nêu rõ bên còn thiếu
+dữ liệu. Trả lời ngắn, rõ ràng và trực tiếp bằng tiếng Việt."""
 
 SAFE_REFUSAL = "Thông tin trong nguồn hiện có chưa đủ để xác minh câu hỏi này."
 
@@ -81,14 +81,16 @@ def format_context(chunks: list[dict]) -> str:
 def call_llm(system_prompt: str, user_message: str) -> str:
     """Gọi OpenAI, Gemini hoặc Anthropic theo cấu hình."""
     provider = LLM_PROVIDER.strip().lower()
-    if provider == "openai":
-        key = os.getenv("OPENAI_API_KEY", "")
+    if provider in ("openai", "openrouter"):
+        key = os.getenv("OPENROUTER_API_KEY" if provider == "openrouter" else "OPENAI_API_KEY", "")
+        base_url = os.getenv("BASE_URL") if provider == "openrouter" else None
         if not key:
-            raise LLMProviderError("Missing OPENAI_API_KEY")
+            raise LLMProviderError(f"Missing {'OPENROUTER_API_KEY' if provider == 'openrouter' else 'OPENAI_API_KEY'}")
         try:
             from openai import OpenAI
-            response = OpenAI(api_key=key).chat.completions.create(
-                model=LLM_MODEL or "gpt-4o-mini",
+            client = OpenAI(api_key=key, base_url=base_url)
+            response = client.chat.completions.create(
+                model=LLM_MODEL or ("qwen/qwen3.8-27b:free" if provider == "openrouter" else "gpt-4o-mini"),
                 temperature=TEMPERATURE,
                 top_p=TOP_P,
                 messages=[
@@ -100,20 +102,28 @@ def call_llm(system_prompt: str, user_message: str) -> str:
         except LLMProviderError:
             raise
         except Exception as error:
-            raise LLMProviderError(f"OpenAI request failed: {error}") from error
+            raise LLMProviderError(f"{provider} request failed: {error}") from error
     if provider == "gemini":
         key = os.getenv("GEMINI_API_KEY", "")
         if not key:
             raise LLMProviderError("Missing GEMINI_API_KEY")
         try:
+            import time
             from google import genai
             client = genai.Client(api_key=key)
-            response = client.models.generate_content(
-                model=LLM_MODEL or "gemini-2.0-flash",
-                contents=user_message,
-                config={"system_instruction": system_prompt, "temperature": TEMPERATURE, "top_p": TOP_P},
-            )
-            return (response.text or "").strip()
+            for attempt in range(4):
+                try:
+                    response = client.models.generate_content(
+                        model=LLM_MODEL or "gemini-flash-lite-latest",
+                        contents=user_message,
+                        config={"system_instruction": system_prompt, "temperature": TEMPERATURE, "top_p": TOP_P},
+                    )
+                    return (response.text or "").strip()
+                except Exception as error:
+                    if ("429" in str(error) or "RESOURCE_EXHAUSTED" in str(error)) and attempt < 3:
+                        time.sleep(4 * (attempt + 1))
+                    else:
+                        raise
         except Exception as error:
             raise LLMProviderError(f"Gemini request failed: {error}") from error
     if provider == "anthropic":
@@ -136,7 +146,35 @@ def call_llm(system_prompt: str, user_message: str) -> str:
 
 
 def _citation_numbers(answer: str) -> set[int]:
-    return {int(number) for number in re.findall(r"\[(\d+)\]", answer)}
+    """Trích xuất tất cả số citation từ câu trả lời (hỗ trợ [1], [1][2], [1, 2], [1-3])."""
+    found = set()
+    for bracket in re.findall(r"\[([^\]]+)\]", answer):
+        for part in re.split(r"[,;\s]+", bracket.strip()):
+            if part.isdigit():
+                found.add(int(part))
+            elif "-" in part:
+                sub = part.split("-")
+                if len(sub) == 2 and sub[0].strip().isdigit() and sub[1].strip().isdigit():
+                    found.update(range(int(sub[0].strip()), int(sub[1].strip()) + 1))
+    return found
+
+
+def _normalize_citations(answer: str) -> str:
+    """Chuẩn hóa citation dạng [1, 2] thành [1][2] để nhất quán."""
+    def _repl(match):
+        inner = match.group(1).strip()
+        nums = []
+        for part in re.split(r"[,;\s]+", inner):
+            if part.isdigit():
+                nums.append(int(part))
+            elif "-" in part:
+                sub = part.split("-")
+                if len(sub) == 2 and sub[0].strip().isdigit() and sub[1].strip().isdigit():
+                    nums.extend(range(int(sub[0].strip()), int(sub[1].strip()) + 1))
+        if nums:
+            return "".join(f"[{n}]" for n in nums)
+        return match.group(0)
+    return re.sub(r"\[([^\]]+)\]", _repl, answer)
 
 
 def _mock_grounded_answer(query: str, chunks: Iterable[dict]) -> str:
@@ -186,8 +224,9 @@ def generate_with_citation(query: str, top_k: int = TOP_K) -> dict:
     numbers = _citation_numbers(answer)
     if answer == SAFE_REFUSAL or not numbers or not numbers <= valid_numbers:
         return {"answer": SAFE_REFUSAL, "sources": [], "retrieval_source": "none"}
+    normalized_answer = _normalize_citations(answer)
     method = sources[0]["retrieval_method"]
-    return {"answer": answer, "sources": sources, "retrieval_source": method}
+    return {"answer": normalized_answer, "sources": sources, "retrieval_source": method}
 
 
 if __name__ == "__main__":
