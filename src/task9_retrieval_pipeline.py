@@ -45,6 +45,9 @@ def retrieve(
     use_reranking: bool = True,
 ) -> list[dict]:
     """Trả về hybrid hoặc pageindex SearchResult."""
+    if not query.strip() or top_k <= 0:
+        return []
+
     # Lấy rộng hơn top_k để RRF có đủ ứng viên từ cả hai nguồn.
     dense = semantic_search(query, top_k=top_k * 2)
     sparse = lexical_search(query, top_k=top_k * 2)
