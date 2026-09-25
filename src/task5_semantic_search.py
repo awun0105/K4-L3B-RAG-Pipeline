@@ -13,7 +13,10 @@ def semantic_search(query: str, top_k: int = 10) -> list[dict]:
     if top_k <= 0:
         return []
 
-    query_vector = embed_texts([query], input_type="query")[0]
+    try:
+        query_vector = embed_texts([query], input_type="query")[0]
+    except TypeError:
+        query_vector = embed_texts([query])[0]
     response = get_collection().query(
         query_embeddings=[query_vector],
         n_results=top_k,
