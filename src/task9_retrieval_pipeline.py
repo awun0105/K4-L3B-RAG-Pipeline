@@ -49,14 +49,29 @@ def retrieve(
         return []
 
     # Lấy rộng hơn top_k để RRF có đủ ứng viên từ cả hai nguồn.
-    dense = semantic_search(query, top_k=top_k * 2)
-    sparse = lexical_search(query, top_k=top_k * 2)
+    # Dense embedding có thể lỗi do model local/driver trên máy người dùng.
+    # BM25 không phụ thuộc model nên vẫn là một đường dự phòng hữu ích, thay vì
+    # biến cả câu trả lời thành safe refusal.
+    try:
+        dense = semantic_search(query, top_k=top_k * 2)
+    except Exception as error:
+        print(f"Dense retrieval unavailable; using BM25 fallback: {error}")
+        dense = []
+    try:
+        sparse = lexical_search(query, top_k=top_k * 2)
+    except Exception as error:
+        print(f"BM25 retrieval unavailable: {error}")
+        sparse = []
+
+    if not dense and not sparse:
+        return []
 
     if use_reranking:
         # RRF chỉ chạy một lần và chỉ gộp theo thứ hạng.
-        hybrid = rerank_rrf([dense, sparse], top_k=top_k)
+        ranked_lists = [results for results in (dense, sparse) if results]
+        hybrid = rerank_rrf(ranked_lists, top_k=top_k)
     else:
-        hybrid = dense[:top_k]
+        hybrid = (dense or sparse)[:top_k]
 
     # Fallback quyết định bằng cosine score gốc của dense retrieval,
     # không dùng RRF score vì hai thang đo khác nhau.
