@@ -101,6 +101,8 @@ def render_message(message:dict,top_k:int)->None:
     st.markdown("<div class='assistant-turn'>", unsafe_allow_html=True)
     with st.container(border=True):
         st.markdown("<div class='assistant-label'><i>✦</i> UNIGUIDE</div>",unsafe_allow_html=True)
+        if message.get("reformulated_query"):
+            st.markdown(f"<div class='reformulated-badge'><i>✦ Ngữ cảnh hội thoại:</i> {html.escape(str(message['reformulated_query']))}</div>", unsafe_allow_html=True)
         st.markdown(f"<div class='answer-copy'>{_answer_html(message['answer'],len(sources))}</div>",unsafe_allow_html=True)
         if message["answer"]==SAFE_REFUSAL:
             status=get_system_status()

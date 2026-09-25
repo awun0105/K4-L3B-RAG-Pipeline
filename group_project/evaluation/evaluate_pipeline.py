@@ -64,7 +64,32 @@ def evaluate_config(
         start_time = time.perf_counter()
         
         # 1 & 2. Retrieval & Generation
-        if mode == "hybrid":
+        if mode == "advanced":
+            from src.task9_retrieval_pipeline import retrieve_advanced
+            from src.task10_generation import format_context, reorder_for_llm, _citation_numbers, _normalize_citations
+            chunks = retrieve_advanced(q, top_k=top_k, use_reranking=True, use_expansion=True, use_cross_encoder=True)
+            retrieval_method = "hybrid+reranker"
+            if not chunks:
+                generated_answer = SAFE_REFUSAL
+                gen_sources = []
+            else:
+                sources = chunks
+                context = format_context(reorder_for_llm(sources))
+                user_message = f"CONTEXT:\n{context}\n\nCÂU HỎI: {q}"
+                try:
+                    ans = call_llm(SYSTEM_PROMPT, user_message)
+                    valid_numbers = set(range(1, len(sources) + 1))
+                    numbers = _citation_numbers(ans)
+                    if ans == SAFE_REFUSAL or not numbers or not numbers <= valid_numbers:
+                        generated_answer = SAFE_REFUSAL
+                        gen_sources = []
+                    else:
+                        generated_answer = _normalize_citations(ans)
+                        gen_sources = sources
+                except Exception:
+                    generated_answer = SAFE_REFUSAL
+                    gen_sources = []
+        elif mode == "hybrid":
             from src.task10_generation import generate_with_citation
             gen_res = generate_with_citation(q, top_k=top_k)
             generated_answer = gen_res["answer"]
@@ -169,28 +194,40 @@ def evaluate_config(
 def main():
     parser = argparse.ArgumentParser()
     parser.add_argument("--dataset", type=Path, default=EVAL_DIR / "golden_dataset.json")
+    parser.add_argument("--mode", choices=["all", "dense", "hybrid", "advanced"], default="all")
     args = parser.parse_args()
 
     dataset = json.loads(args.dataset.read_text(encoding="utf-8"))
     print(f"Loaded {len(dataset)} evaluation cases from {args.dataset}")
 
-    print("\n=== EVALUATING CONFIG A (DENSE ONLY) ===")
-    results_a, summary_a = evaluate_config(dataset, mode="dense", top_k=5)
-    (EVAL_DIR / "results_dense.json").write_text(json.dumps(results_a, ensure_ascii=False, indent=2), encoding="utf-8")
+    summary_a, summary_b, summary_c = {}, {}, {}
 
-    print("\n=== EVALUATING CONFIG B (HYBRID + RRF) ===")
-    results_b, summary_b = evaluate_config(dataset, mode="hybrid", top_k=5)
-    (EVAL_DIR / "results_hybrid.json").write_text(json.dumps(results_b, ensure_ascii=False, indent=2), encoding="utf-8")
+    if args.mode in ["all", "dense"]:
+        print("\n=== EVALUATING CONFIG A (DENSE ONLY) ===")
+        results_a, summary_a = evaluate_config(dataset, mode="dense", top_k=5)
+        (EVAL_DIR / "results_dense.json").write_text(json.dumps(results_a, ensure_ascii=False, indent=2), encoding="utf-8")
 
-    print("\n================== SUMMARY TABLE ==================")
-    print(f"Metric             | Config A (Dense) | Config B (Hybrid) | Delta B-A")
-    print(f"-------------------|------------------|-------------------|----------")
-    for metric in ["faithfulness", "answer_relevance", "context_recall", "context_precision", "average", "latency"]:
-        va = summary_a.get(metric, 0.0)
-        vb = summary_b.get(metric, 0.0)
-        delta = round(vb - va, 3)
-        prefix = "+" if delta > 0 else ""
-        print(f"{metric:<18} | {va:<16} | {vb:<17} | {prefix}{delta}")
+    if args.mode in ["all", "hybrid"]:
+        print("\n=== EVALUATING CONFIG B (HYBRID + RRF) ===")
+        results_b, summary_b = evaluate_config(dataset, mode="hybrid", top_k=5)
+        (EVAL_DIR / "results_hybrid.json").write_text(json.dumps(results_b, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    if args.mode in ["all", "advanced"]:
+        print("\n=== EVALUATING CONFIG C (HYBRID + EXPANSION + CROSS-ENCODER) ===")
+        results_c, summary_c = evaluate_config(dataset, mode="advanced", top_k=5)
+        (EVAL_DIR / "results_advanced.json").write_text(json.dumps(results_c, ensure_ascii=False, indent=2), encoding="utf-8")
+
+    if args.mode == "all":
+        print("\n=================================== 3-WAY COMPARISON TABLE ===================================")
+        print(f"Metric             | Config A (Dense) | Config B (Hybrid RRF) | Config C (Advanced) | Delta C-B")
+        print(f"-------------------|------------------|-----------------------|---------------------|----------")
+        for metric in ["faithfulness", "answer_relevance", "context_recall", "context_precision", "average", "latency"]:
+            va = summary_a.get(metric, 0.0)
+            vb = summary_b.get(metric, 0.0)
+            vc = summary_c.get(metric, 0.0)
+            delta = round(vc - vb, 3)
+            prefix = "+" if delta > 0 else ""
+            print(f"{metric:<18} | {va:<16} | {vb:<21} | {vc:<19} | {prefix}{delta}")
 
 
 if __name__ == "__main__":
