@@ -9,7 +9,7 @@
 
 | STT | Mã Học Viên | Họ và Tên | Vai trò | Nhánh Git | Phần việc chính |
 | :---: | :---: | :--- | :--- | :---: | :--- |
-| 1 | `2A202602467` | **Lâm Quang Anh Quân** | **Team Lead / Data & Ingestion / Bonus Architecture** | `Quan` | - Thu thập & chuẩn hóa tài liệu HCMUS (Task 1–3)<br>- Tối ưu Generation & Citation Normalization (Task 10)<br>- Xây dựng trọn bộ 4 tính năng Bonus (+10 điểm)<br>- Bộ dữ liệu đánh giá 16 cases & báo cáo A/B benchmark |
+| 1 | `2A202602467` | **Lâm Quang Anh Quân** | **Team Lead / Data & Ingestion / Release & Bonus Architecture** | `Quan` | - Quản lý phiên bản Git, điều phối PR & tích hợp nhánh vào `develop`<br>- Lập trình trọn bộ script thu thập & chuẩn hóa dữ liệu HCMUS (Task 1–3)<br>- Audit chất lượng code, refactor & enhance toàn diện Tasks 4–10 lúc cuối<br>- Xây dựng trọn bộ 4 tính năng Bonus (+10 điểm Rubric)<br>- Thiết kế Golden Dataset 16 cases & framework đánh giá A/B benchmark |
 | 2 | `2A202602615` | **Nguyễn Văn Diện** | **Retrieval & Search Specialist** | `VanDien` | - Phân đoạn văn bản & Indexing Vector vào ChromaDB (Task 4)<br>- Tìm kiếm ngữ nghĩa Semantic Search (Task 5)<br>- Tìm kiếm từ khóa BM25Okapi (Task 6)<br>- Tái xếp hạng Reciprocal Rank Fusion RRF (Task 7)<br>- Tìm kiếm phi vector PageIndex Fallback (Task 8)<br>- Tích hợp Hybrid Retrieval Pipeline (Task 9) |
 | 3 | `2A202602688` | **Bùi Văn Quang** | **Generation & UI / Integration Engineer** | `Quang` | - Xây dựng module sinh câu trả lời Grounded Generation (Task 10)<br>- Citation mapping & xử lý từ chối an toàn Safe Refusal<br>- Phát triển và tinh chỉnh giao diện Streamlit Chatbot (`app.py`, `ui/`)<br>- Tích hợp và kiểm thử pipeline End-to-End |
 
@@ -18,16 +18,22 @@
 ## 2. Chi Tiết Đóng Góp Của Từng Thành Viên
 
 ### 2.1. Lâm Quang Anh Quân (Mã học viên: `2A202602467` — Nhánh `Quan`)
-- **Vai trò:** Trưởng nhóm, phụ trách Thu thập/Chuẩn hóa dữ liệu, Đánh giá chất lượng RAG và Bộ tính năng điểm thưởng Bonus (+10 điểm).
+- **Vai trò:** Trưởng nhóm, phụ trách Quản trị phiên bản Git & Release, Lập trình pipeline dữ liệu, Audit & Nâng cấp chất lượng code cuối kỳ, Đánh giá chất lượng RAG và Bộ tính năng điểm thưởng Bonus (+10 điểm).
 - **Phần việc cụ thể:**
-  - **Task 1–3 (Data Pipeline):** Thu thập văn bản hành chính HCMUS (`STSV2025_ONLINE`, `QĐ-1028`, `QĐ-1175`, `QĐ-575`), trích xuất text sạch 100% từ PDF sang Markdown chuẩn hóa có metadata (`data/landing/`, `data/standardized/`).
-  - **Task 10 (Generation & Groundedness):** Hiệu chỉnh Prompt HCMUS, xây dựng bộ lọc và chuẩn hóa trích dẫn `_normalize_citations` (chuyển đổi `[1, 2]` thành `[1][2]`), bổ sung exponential backoff retry cho Gemini API khi gặp lỗi rate limit 429.
-  - **UI Interaction:** Xây dựng cấu trúc đa tab (Hỏi đáp, Kho tài liệu, Retrieval workspace), dark mode toggle, hiển thị thẻ bằng chứng context và hiệu ứng highlight nguồn trích dẫn.
+  - **Quản lý phiên bản Git & Release Management:** Khởi tạo và quản lý cấu trúc nhánh (`develop`, `Quan`, `VanDien`, `Quang`), thiết lập quy trình Pull Request và gating kiểm thử tự động, trực tiếp xử lý merge conflict khi tích hợp các nhánh độc lập (PR #1, PR #2, PR #3, PR #5) bảo đảm branch `develop` luôn ổn định và passing 100% tests.
+  - **Lập trình Script Thu thập & Chuẩn hóa Dữ liệu (Task 1–3):**
+    - *Task 1 (`src/task1_collect_legal_docs.py`):* Viết script tự động nạp văn bản pháp quy từ manifest CSV hoặc nguồn công khai HCMUS vào `data/landing/legal/`.
+    - *Task 2 (`src/task2_crawl_news.py`):* Viết script cào tin tức thông báo công tác sinh viên bằng custom TextExtractor / HTML-to-Markdown parser vào `data/landing/news/`.
+    - *Task 3 (`src/task3_convert_markdown.py`):* Viết script tự động chuyển đổi PDF/DOCX sang Markdown chuẩn hóa có metadata YAML, xử lý bóc tách text layer từ `STSV2025_ONLINE.pdf` để thay thế PDF scan mộc đỏ mờ, đảm bảo dữ liệu sạch 100% cho bước indexing.
+  - **Audit, Kiểm định Chất lượng & Tinh chỉnh Code Toàn diện (Tasks 4–10):**
+    - Rà soát toàn bộ code của nhóm trước khi nộp, bổ sung chunk deduplication & hashing (Task 4), sửa lỗi crash mock signature `input_type` và kẹp khoảng chuẩn hóa $[0, 1]$ (Task 5), tối ưu regex tokenizer tiếng Việt BM25 (Task 6), bảo toàn deduplication RRF (Task 7), nâng cấp PageIndex hierarchy heading `#`, `##` (Task 8), tinh chỉnh routing fallback threshold `SCORE_THRESHOLD = 0.60` (Task 9).
+    - Tại Task 10: Xây dựng bộ lọc và chuẩn hóa trích dẫn `_normalize_citations` (chuyển đổi `[1, 2]` thành `[1][2]`), bổ sung exponential backoff retry cho Gemini API khi gặp lỗi rate limit 429 quota. Nhờ đó nâng điểm benchmark trung bình từ 0.736 lên 0.889.
   - **Bonus Suite (+10 điểm Rubric):**
     - *HyDE & Domain Query Expansion (+3 điểm):* Module `src/query_expansion.py` tự động nhận diện từ viết tắt trường (`ĐRL`, `HBKK`, `KTX`, `CTĐT`, `GDQP-AN`, `thang điểm 100`, `Điều 16`). Tăng Context Recall từ 0.916 lên 0.940.
     - *Cross-Encoder Reranker (+3 điểm):* Module `src/task7_reranking.py` dùng `cross-encoder/ms-marco-MiniLM-L-6-v2` chấm điểm tương tác sâu giữa câu hỏi và ứng viên RRF. Giữ vững Context Precision = 1.000 ($MRR=1.0$).
     - *Conversation Memory (+2 điểm):* Module `src/conversation_memory.py` ghi nhớ lịch sử nhiều lượt, viết lại câu hỏi nối tiếp (follow-up) thành standalone query trong `app.py`.
     - *Interactive UI Source Highlighting (+2 điểm):* CSS `:target` animation phát sáng viền và cuộn mượt mà (`smooth scroll`) tới thẻ nguồn khi người dùng click citation badge `[1]`.
+  - **UI Interaction:** Xây dựng cấu trúc đa tab (Hỏi đáp, Kho tài liệu, Retrieval workspace), dark mode toggle, hiển thị thẻ bằng chứng context và hiệu ứng highlight nguồn trích dẫn.
   - **Evaluation & Benchmark:** Thiết kế `golden_dataset.json` (16 test cases grounded thực tế), viết script `evaluate_pipeline.py` tự động đo 4 chỉ số và lập báo cáo `RESULT.md`.
 
 ---
@@ -58,8 +64,9 @@
 
 | Hạng mục / Module | File mã nguồn / Tài liệu chính | Thành viên phụ trách chính | Thành viên phối hợp / Review |
 | :--- | :--- | :---: | :---: |
+| **Quản lý phiên bản Git & Release PRs** | `.git/`, Git branches & PR workflow | **Lâm Quang Anh Quân** | Nguyễn Văn Diện, Bùi Văn Quang |
 | **Kiến trúc, Hợp đồng & Test suites** | `src/contracts.py`, `tests/` | **Lâm Quang Anh Quân** | Nguyễn Văn Diện, Bùi Văn Quang |
-| **Thu thập & Chuẩn hóa dữ liệu (Task 1–3)** | `data/landing/`, `data/standardized/` | **Lâm Quang Anh Quân** | Nguyễn Văn Diện |
+| **Script Thu thập & Chuẩn hóa dữ liệu (Task 1–3)** | `src/task1_*.py`, `src/task2_*.py`, `src/task3_*.py`, `data/` | **Lâm Quang Anh Quân** | Nguyễn Văn Diện |
 | **Chunking & Vector Indexing (Task 4)** | `src/task4_chunking_indexing.py` | **Nguyễn Văn Diện** | Lâm Quang Anh Quân |
 | **Semantic Search (Task 5)** | `src/task5_semantic_search.py` | **Nguyễn Văn Diện** | Lâm Quang Anh Quân |
 | **Lexical Search BM25 (Task 6)** | `src/task6_lexical_search.py` | **Nguyễn Văn Diện** | Bùi Văn Quang |
@@ -67,6 +74,7 @@
 | **PageIndex Fallback (Task 8)** | `src/task8_pageindex_vectorless.py` | **Nguyễn Văn Diện** | Bùi Văn Quang |
 | **Retrieval Pipeline (Task 9)** | `src/task9_retrieval_pipeline.py` | **Nguyễn Văn Diện** | Lâm Quang Anh Quân |
 | **Generation & Citations (Task 10)** | `src/task10_generation.py` | **Bùi Văn Quang** | Lâm Quang Anh Quân |
+| **Audit & Nâng cấp Code toàn diện (Tasks 4–10)** | `src/` (toàn bộ pipeline) | **Lâm Quang Anh Quân** | Nguyễn Văn Diện, Bùi Văn Quang |
 | **Chatbot UI Streamlit** | `app.py`, `ui/` | **Bùi Văn Quang** | Lâm Quang Anh Quân |
 | **Đánh giá Golden Dataset & A/B Benchmark** | `group_project/evaluation/`, `reports/RESULT.md` | **Lâm Quang Anh Quân** | Bùi Văn Quang |
 | **Bộ 4 Tính Năng Điểm Thưởng (+10 Bonus)** | `src/query_expansion.py`, `src/conversation_memory.py` | **Lâm Quang Anh Quân** | Nguyễn Văn Diện |
